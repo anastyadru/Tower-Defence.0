@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource audio_;
+    
+    private void Start()
     {
-        
+        if (!PlayerPrefs.HasKey("volume")) audio_.volume = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        audio_.volume = PlayerPrefs.GetFloat("volume");
     }
 }
