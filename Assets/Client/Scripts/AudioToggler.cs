@@ -19,21 +19,4 @@ public class AudioToggler : MonoBehaviour
             AudioListener.volume = 0f;
         }
     }
-    
-    public void OnOffSounds()
-    {
-        if (!isOn)
-        {
-            AudioListener.volume = 1f;
-            isOn = true;
-        }
-        else
-        {
-            AudioListener.volume = 0f;
-            isOn = false;
-        }
-
-        PlayerPrefs.SetInt("SoundOn", isOn ? 1 : 0);
-        PlayerPrefs.Save();
-    }
 }
