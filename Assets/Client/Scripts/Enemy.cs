@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    public int Damage;
+    
     public NavMeshAgent agent;
     public GameObject EndCube;
     
