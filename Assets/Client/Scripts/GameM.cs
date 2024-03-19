@@ -37,7 +37,15 @@ public class GameM : MonoBehaviour
 		
 		if(_waveIndex >= _wavesCount && enemies.Length == 0 && !_endGame)
 		{
+			_endGame = true;
+			Debug.Log("Victory!");
+			Time.timeScale = 0;
+		}
 
+		if(_waveIndex >= _wavesCount)
+		{
+			_waveTimeText.gameObject.SetActive(false);
+			return;
 		}
 	}
 
