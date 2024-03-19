@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
     {
         if(other.CompareTag("EndCube"))
         {
-            GameM.instance.TakeDamage()
+            GameM.instance.TakeDamage(_damage);
+            Destroy(gameObject);
         }
     }
 }
