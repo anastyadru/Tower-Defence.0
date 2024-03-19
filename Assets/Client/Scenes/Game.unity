@@ -907,6 +907,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3907907640721789480, guid: 257e9dea7c11e1c40b22c4c30887b2b8, type: 3}
   m_PrefabInstance: {fileID: 217506935}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &217506937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8584269363054926546, guid: 257e9dea7c11e1c40b22c4c30887b2b8, type: 3}
+  m_PrefabInstance: {fileID: 217506935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &222903209
 GameObject:
   m_ObjectHideFlags: 0
@@ -10114,10 +10119,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthText: {fileID: 2109773768}
   _health: 100
-  _enemy: {fileID: 0}
-  _startCube: {fileID: 0}
-  _waveText: {fileID: 0}
-  _waveTimeText: {fileID: 0}
+  _enemy: {fileID: 3101055335424231332, guid: f71288071a2c55e48aa41cba934b4aeb, type: 3}
+  _startCube: {fileID: 217506937}
+  _waveText: {fileID: 1134971362}
+  _waveTimeText: {fileID: 1515869976}
   _wavesCount: 5
   _nextWaveTime: 10
   _spawnInterval: 1
