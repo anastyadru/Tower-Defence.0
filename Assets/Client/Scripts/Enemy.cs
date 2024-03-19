@@ -5,19 +5,27 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public int Damage;
-    
+    [SerializeField] private int _damage;
+
     public NavMeshAgent agent;
     public GameObject EndCube;
     
-    void Start()
+    private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         EndCube = GameObject.FindGameObjectWithTag("EndCube");
     }
     
-    void Update()
+    private void Update()
     {
         agent.SetDestination(EndCube.transform.position);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("EndCube"))
+        {
+            GameM.instance.TakeDamage()
+        }
     }
 }

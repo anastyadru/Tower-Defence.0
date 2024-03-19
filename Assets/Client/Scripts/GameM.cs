@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class GameM : MonoBehaviour
 {
-    public static GameM instance;
     [SerializeField] private Text _healthText;
     [SerializeField] private int _health = 100;
+    
+    public static GameM instance;
 
     private void Start()
     {
         instance = this;
+        
+        _healthText.text = _health.ToString();
     }
 
     public void TakeDamage(int damage)
