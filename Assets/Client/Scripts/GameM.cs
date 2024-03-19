@@ -33,7 +33,7 @@ public class GameM : MonoBehaviour
 
 	public void Update()
 	{
-		Enemy[] enemies = FindObjectOfType<Enemy>();
+		Enemy[] enemies = FindObjectsOfType<Enemy>();
 		
 		if(_waveIndex >= _wavesCount && enemies.Length == 0 && !_endGame)
 		{
@@ -48,14 +48,14 @@ public class GameM : MonoBehaviour
 			return;
 		}
 
-		if(_StartTime <= 0)
+		if(_startTime <= 0)
 		{
 			StartCoroutine(Spawn());
 			_startTime = _nextWaveTime;
-		{
+		}
 
 		_startTime -= Time.deltaTime;
-		_StartTime = Mathf.Clamp(_startTime, 0, Mathf.Infinity);
+		_startTime = Mathf.Clamp(_startTime, 0, Mathf.Infinity);
 		_waveTimeText.text = string.Format("(0:00.00)", _startTime);
 		if(_waveIndex > 0)
 		{
@@ -83,7 +83,7 @@ public class GameM : MonoBehaviour
 		
 		for(int i = 0; i < _waveIndex; i++)
 		{
-			Instatiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
+			Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
 			yield return new WaitForSeconds(_spawnInterval);
 		}
 	}
