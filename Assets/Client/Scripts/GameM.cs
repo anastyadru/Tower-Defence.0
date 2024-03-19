@@ -27,7 +27,7 @@ public class GameM : MonoBehaviour
     {
         instance = this;
         
-        _healthText.text = "ХП: " + _health;
+        _healthText.text = "Health: " + _health;
 		_waveText.gameObject.SetActive(false);
     }
 
@@ -60,7 +60,7 @@ public class GameM : MonoBehaviour
 		if(_waveIndex > 0)
 		{
 			_waveText.gameObject.SetActive(true);
-			_waveText.text = _waveIndex + "/" + _wavesCount + "Волна";
+			_waveText.text = _waveIndex + "/" + _wavesCount + "Wave";
 		}
 	}
 
@@ -74,7 +74,7 @@ public class GameM : MonoBehaviour
 			Time.timeScale = 0;
         }
 
-        _healthText.text = "ХП: " + _health;
+        _healthText.text = "Health: " + _health;
     }
 
 	IEnumerator Spawn()
