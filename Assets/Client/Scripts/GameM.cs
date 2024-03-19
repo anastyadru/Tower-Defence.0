@@ -60,7 +60,7 @@ public class GameM : MonoBehaviour
 		if(_waveIndex > 0)
 		{
 			_waveText.gameObject.SetActive(true);
-			_waveText.text = _waveIndex + "/" + _wavesCount + "Wave";
+			_waveText.text = _waveIndex + "/" + _wavesCount + " Wave";
 		}
 	}
 
