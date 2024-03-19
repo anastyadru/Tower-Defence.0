@@ -27,7 +27,7 @@ public class GameM : MonoBehaviour
     {
         instance = this;
         
-        _healthText.text = _health.ToString();
+        _healthText.text = "ХП: " + _health;
 		_waveText.gameObject.SetActive(false);
     }
 
@@ -68,9 +68,22 @@ public class GameM : MonoBehaviour
         _health -= damage;
         if (_health <= 0)
         {
-            Debug.Log("Defeat");
+            _endGame = true;
+			Debug.Log("Defeat");
+			Time.timeScale = 0;
         }
 
-        _healthText.text = _health.ToString();
+        _healthText.text = "ХП: " + _health;
     }
+
+	IEnumerator Spawn()
+	{
+		_waveIndex++;
+		
+		for(int i = 0; i < _waveIndex; i++)
+		{
+			Instatiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
+			yield return new WaitForSeconds(_spawnInterval);
+		}
+	}
 }
