@@ -50,7 +50,8 @@ public class GameM : MonoBehaviour
 
 		if(_StartTime <= 0)
 		{
-			_StartTime = _nextWaveTime;
+			StartCoroutine(Spawn());
+			_startTime = _nextWaveTime;
 		{
 
 		_startTime -= Time.deltaTime;
