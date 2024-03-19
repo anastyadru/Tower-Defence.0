@@ -28,7 +28,18 @@ public class GameM : MonoBehaviour
         instance = this;
         
         _healthText.text = _health.ToString();
+		_waveText.gameObject.SetActive(false);
     }
+
+	public void Update()
+	{
+		Enemy[] enemies = FindObjectOfType<Enemy>();
+		
+		if(_waveIndex >= _wavesCount && enemies.Length == 0 && !_endGame)
+		{
+
+		}
+	}
 
     public void TakeDamage(int damage)
     {
