@@ -47,6 +47,20 @@ public class GameM : MonoBehaviour
 			_waveTimeText.gameObject.SetActive(false);
 			return;
 		}
+
+		if(_StartTime <= 0)
+		{
+			_StartTime = _nextWaveTime;
+		{
+
+		_startTime -= Time.deltaTime;
+		_StartTime = Mathf.Clamp(_startTime, 0, Mathf.Infinity);
+		_waveTimeText.text = string.Format("(0:00.00)", _startTime);
+		if(_waveIndex > 0)
+		{
+			_waveText.gameObject.SetActive(true);
+			_waveText.text = _waveIndex + "/" + _wavesCount + "Волна";
+		}
 	}
 
     public void TakeDamage(int damage)
