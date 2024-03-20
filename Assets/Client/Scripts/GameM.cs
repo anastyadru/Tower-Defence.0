@@ -56,7 +56,7 @@ public class GameM : MonoBehaviour
 
 		_startTime -= Time.deltaTime;
 		_startTime = Mathf.Clamp(_startTime, 0, Mathf.Infinity);
-		_waveTimeText.text = string.Format("(0:00.00)", _startTime);
+		_waveTimeText.text = string.Format("{0:00.00}", _startTime);
 		if(_waveIndex > 0)
 		{
 			_waveText.gameObject.SetActive(true);
