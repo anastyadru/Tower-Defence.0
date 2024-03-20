@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int _damage;
     [SerializeField] private int _health = 10;
     [SerializeField] private TextMesh _healthText;
 
@@ -40,7 +39,7 @@ public class Enemy : MonoBehaviour
     {
         if(other.CompareTag("EndCube"))
         {
-            GameM.instance.TakeDamage(_damage);
+            GameM.instance.TakeDamage(_health);
             Destroy(gameObject);
         }
     }

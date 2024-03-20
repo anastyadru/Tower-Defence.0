@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 10
   _health: 10
-  _healthText: {fileID: 0}
+  _healthText: {fileID: 7699311650895461505}
   agent: {fileID: 3101055335424231335}
   EndCube: {fileID: 0}
 --- !u!1 &3876093367366249398
