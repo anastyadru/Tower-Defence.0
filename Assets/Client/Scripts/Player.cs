@@ -8,6 +8,12 @@ public class Player : MonoBehaviour
     [Space(5)]
     [SerializeField] private float _range = 15;
     [SerializeField] private float _rotationSpeed = 3;
-    
-    
+
+    private Transform _target;
+    private Enemy _nearestEnemy;
+
+    private void Update()
+    {
+        
+    }
 }
