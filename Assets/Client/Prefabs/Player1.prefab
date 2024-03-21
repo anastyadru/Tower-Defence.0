@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5011313312658910019}
-  m_LocalRotation: {x: 0.00000001749042, y: -0.0007741474, z: -0.000000042225604, w: 0.9999997}
+  m_LocalRotation: {x: 0, y: -0.0007767275, z: 0, w: 0.9999997}
   m_LocalPosition: {x: 33.84, y: -3.82, z: -21.28}
   m_LocalScale: {x: 0.25303423, y: 0.36398, z: 0.30607077}
   m_Children:
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4016325022973520396}
   - component: {fileID: 8995505276539661566}
   m_Layer: 0
-  m_Name: rotater
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 4864825745822659141}
   - component: {fileID: 6650517246737688655}
   m_Layer: 0
-  m_Name: cannon
+  m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
