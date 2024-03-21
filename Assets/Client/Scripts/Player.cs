@@ -15,7 +15,12 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
-        float shortestDistance 
-        
+        float shortestDistance = Mathf.Infinity;
+
+        foreach (Enemy enemy in enemies)
+        {
+            
+        }
+
     }
 }
