@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
             if (distance < shortestDistance)
             {
                 shortestDistance = distance;
-                
+                _nearestEnemy = enemy;
             }
         }
 
