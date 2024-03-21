@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        float shortestDistance 
         
     }
 }
