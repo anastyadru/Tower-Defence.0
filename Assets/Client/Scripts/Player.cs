@@ -52,7 +52,13 @@ public class Player : MonoBehaviour
             {
                 for (int i = 0; i < _firePoints.Length; i++)
                 {
-                    Instantiate(_bullet, _firePoints[i].position, _firePoints[i].rotation); 
+                    GameObject bullet = Instantiate(_bullet, _firePoints[i].position, _firePoints[i].rotation);
+                    Bullet bullet1 = bullet.GetComponent<Bullet>();
+
+                    if (bullet != null)
+                    {
+                        bullet1.Find(_target);
+                    }
                 }
 
                 _countdown = 1 / _fireRate;
