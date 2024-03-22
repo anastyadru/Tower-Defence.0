@@ -28,5 +28,20 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (_nearestEnemy != null && shortestDistance <= _range)
+        {
+            _target = _nearestEnemy.transform;
+        }
+        else
+        {
+            _target = null;
+        }
+
+        if (_target != null)
+        {
+
+        }
     }
+    
+    
 }
