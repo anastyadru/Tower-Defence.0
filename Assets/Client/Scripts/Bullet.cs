@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
             Vector3 direction = _target.position - transform.position;
             float distance = _speed * Time.deltaTime;
 
-            if(direction.magnitube <= distance)
+            if(direction.magnitude <= distance)
             {
                 _target.GetComponent<Enemy>().TakeDamage(_damage);
                 Destroy(gameObject);
