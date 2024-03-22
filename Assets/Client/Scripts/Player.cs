@@ -50,12 +50,12 @@ public class Player : MonoBehaviour
 
             if (_countdown <= 0)
             {
-                for (int i = 0; i < _firePoints.Length; i++)
+                for(int i = 0; i < _firePoints.Length; i++)
                 {
                     GameObject bullet = Instantiate(_bullet, _firePoints[i].position, _firePoints[i].rotation);
                     Bullet bullet1 = bullet.GetComponent<Bullet>();
 
-                    if (bullet != null)
+                    if (bullet1 != null)
                     {
                         bullet1.Find(_target);
                     }
