@@ -17,7 +17,14 @@ public class Bullet : MonoBehaviour
     {
         if (_target != null)
         {
-            Vector3.direction
+            Vector3 direction = _target.position - transform.position;
+            float distance = _speed * Time.deltaTime;
+
+            if(direction.magnitube <= distance)
+            {
+                _target.GetComponent<Enemy>().TakeDamage(_damage);
+                Destroy(gameObject);
+            }
         }
     }
 }
