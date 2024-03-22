@@ -47,6 +47,18 @@ public class Player : MonoBehaviour
             Quaternion look = Quaternion.LookRotation(direction);
             Vector3 rotation = Quaternion.Lerp(_head.rotation, look, _rotationSpeed * Time.deltaTime).eulerAngles;
             _head.rotation = Quaternion.Euler(0, rotation.y, 0);
+
+            if (_countdown <= 0)
+            {
+                for (int i = 0; i < _firePoints.Length; i++)
+                {
+                    Instantiate(_bullet, _firePoints[i].position, _firePoints[i].rotation); 
+                }
+
+                _countdown = 1 / _fireRate;
+            }
+
+            _countdown -= Time.deltaTime;
         }
     }
 
