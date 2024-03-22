@@ -45,6 +45,10 @@ public class Player : MonoBehaviour
             _head.rotation = Quaternion.Euler(0, rotation.y, 0);
         }
     }
-    
-    
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _range);
+    }
 }
