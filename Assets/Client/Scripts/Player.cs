@@ -39,7 +39,10 @@ public class Player : MonoBehaviour
 
         if (_target != null)
         {
-
+            Vector3 direction = _target.position - transform.position;
+            Quaternion look = Quaternion.LookRotation(direction);
+            Vector3 rotation = Quaternion.Lerp(_head.rotation, look, _rotationSpeed * Time.deltaTime).eulerAngles;
+            _head.rotation = Quaternion.Euler(0, rotation.y, 0);
         }
     }
     
