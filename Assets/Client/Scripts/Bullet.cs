@@ -25,10 +25,8 @@ public class Bullet : MonoBehaviour
                 _target.GetComponent<Enemy>().TakeDamage(_damage);
                 Destroy(gameObject);
             }
-            else
-            {
-                transform.Translate(direction.normalized * distance, Space.World);
-            }
+
+            transform.Translate(direction.normalized * distance, Space.World);
         }
         else
         {
