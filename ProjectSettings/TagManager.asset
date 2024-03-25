@@ -7,6 +7,7 @@ TagManager:
   - EndCube
   - StartCube
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
