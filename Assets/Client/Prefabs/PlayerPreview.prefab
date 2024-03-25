@@ -175,7 +175,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 97339364879472473}
-  - component: {fileID: 1768298164852453113}
   m_Layer: 0
   m_Name: PlayerPreview
   m_TagString: Untagged
@@ -190,7 +189,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092839759178301563}
-  m_LocalRotation: {x: 0.00000001749042, y: -0.0007741474, z: -0.000000042225604, w: 0.9999997}
+  m_LocalRotation: {x: 0, y: -0.0007767275, z: 0, w: 0.9999997}
   m_LocalPosition: {x: 45.9, y: -3.8, z: -21.3}
   m_LocalScale: {x: 0.25303423, y: 0.36398, z: 0.30607077}
   m_Children:
@@ -199,25 +198,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0.089, z: 0}
---- !u!114 &1768298164852453113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092839759178301563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7bbefdc6866c44a98c18e67f7e35bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 3653382588571532611}
-  _firePoints:
-  - {fileID: 6377238102069504228}
-  _bullet: {fileID: 6762531970089644249, guid: 7c9e4854466c4004f8c3b1d783664aa0, type: 3}
-  _range: 15
-  _rotationSpeed: 3
-  _fireRate: 1
 --- !u!1 &3157444816833911667
 GameObject:
   m_ObjectHideFlags: 0
