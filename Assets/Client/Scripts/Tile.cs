@@ -29,18 +29,24 @@ public class Tile : MonoBehaviour
         if(_build && !_spawned)
         {
             _spawned = true;
-            Instantiate(_player, transform.position, Quaternion.Identity);
+            Instantiate(_player, transform.position, Quaternion.identity);
             Destroy(_crPlayerPreview);
         }
     }
 
     private void OnMouseExit()
     {
-        if (_crPlayerPreview != null)
+        if(_crPlayerPreview != null)
         {
             Destroy(_crPlayerPreview);
         }
     }
-    
-    
+
+    private void OnMouseOver()
+    {
+        if(_crPlayerPreview == null && _build && !_spawned)
+        {
+            _crPlayerPreview = Instantiate(_playerPreview, transform.position, Quaternion.identity);
+        }
+    }
 }
