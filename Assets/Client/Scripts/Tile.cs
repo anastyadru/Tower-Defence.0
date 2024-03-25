@@ -23,4 +23,16 @@ public class Tile : MonoBehaviour
             }
         }
     }
+
+    private void OnMouseDown()
+    {
+        if (_build && !_spawned)
+        {
+            _spawned = true;
+            Instantiate(_player, transform.position, Quaternion.Identity);
+            Destroy(_crPlayerPreview);
+        }
+    }
+    
+    
 }
