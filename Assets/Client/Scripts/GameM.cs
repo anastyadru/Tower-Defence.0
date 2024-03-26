@@ -27,6 +27,8 @@ public class GameM : MonoBehaviour
 	private int _waveIndex;
 	private bool _endGame;
 
+	public static GameM instance;
+
     private void Start()
     {
         instance = this;
