@@ -8171,7 +8171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1558914587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11063,7 +11063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthText: {fileID: 2109773768}
   _health: 100
-  _goldText: {fileID: 0}
+  _goldText: {fileID: 1127118958}
   _enemy: {fileID: 3101055335424231332, guid: f71288071a2c55e48aa41cba934b4aeb, type: 3}
   _startCube: {fileID: 217506937}
   _waveText: {fileID: 1134971362}
