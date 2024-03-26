@@ -33,6 +33,8 @@ public class GameM : MonoBehaviour
         
         _healthText.text = "Health: " + _health;
 		_waveText.gameObject.SetActive(false);
+
+		UpdateGold();
     }
 
 	public void Update()
@@ -68,7 +70,12 @@ public class GameM : MonoBehaviour
 		}
 	}
 
-    public void TakeDamage(int damage)
+    public void UpdateGold()
+	{
+		_goldText.text = _gold + "C";
+	}
+
+	public void TakeDamage(int damage)
     {
         _health -= damage;
         if (_health <= 0)
