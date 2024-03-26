@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         _health -= damage;
         if (_health <= 0)
         {
-            GameM.instance.gold += _killReward;
+            GameM.instance._gold += _killReward;
             GameM.instance.UpdateGold();
             Destroy(gameObject);
         }
