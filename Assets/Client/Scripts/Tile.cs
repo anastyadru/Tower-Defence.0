@@ -64,7 +64,12 @@ public class Tile : MonoBehaviour
                 _crPlayerPreview = Instantiate(_playerPreviewRed, transform.position, Quaternion.identity);
             }
         }
-        
-        
+
+        if (_crPlayerPreview != null && _build && !_spawned && !_used && GameM.instance._gold >= GameM.instance._playerCost)
+        {
+            _used = true;
+            Destroy(_crPlayerPreview);
+            _crPlayerPreview = Instantiate(_playerPreview, transform.position, Quaternion.identity);
+        }
     }
 }
