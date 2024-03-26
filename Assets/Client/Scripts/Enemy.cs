@@ -8,6 +8,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _health = 10;
     [SerializeField] private TextMesh _healthText;
 
+    [Space(5)] 
+    
+    [SerializeField] private int _killReward = 25;
+
     public NavMeshAgent agent;
     public GameObject EndCube;
     
