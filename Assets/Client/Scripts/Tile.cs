@@ -53,9 +53,18 @@ public class Tile : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(_crPlayerPreview == null && _build && !_spawned)
+        if (_crPlayerPreview == null && _build && !_spawned)
         {
-            _crPlayerPreview = Instantiate(_playerPreview, transform.position, Quaternion.identity);
+            if (GameM.instance._gold >= GameM.instance._playerCost)
+            {
+                _crPlayerPreview = Instantiate(_playerPreview, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                _crPlayerPreview = Instantiate(_playerPreviewRed, transform.position, Quaternion.identity);
+            }
         }
+        
+        
     }
 }
