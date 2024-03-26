@@ -7,18 +7,25 @@ public class GameM : MonoBehaviour
 {
     [SerializeField] private Text _healthText;
     [SerializeField] private int _health = 100;
+
 	[Space(5)]
+
 	[SerializeField] private Text _goldText;
+
 	[Space(5)]
+
 	[SerializeField] private Enemy _enemy;
 	[SerializeField] private GameObject _startCube;
 	[SerializeField] private Text _waveText;
 	[SerializeField] private Text _waveTimeText;
+
 	[Space(5)]
+
 	[SerializeField] private int _wavesCount = 5;
 	[SerializeField] private float _nextWaveTime = 10;
 	[SerializeField] private float _spawnInterval = 1;
 	[SerializeField] private float _startTime = 5;
+
 	[Space(5)]
     
     public int _gold = 50;
