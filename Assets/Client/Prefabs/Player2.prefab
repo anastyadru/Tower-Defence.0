@@ -266,7 +266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8051971560993738673}
-  - component: {fileID: 8533697957308446225}
+  - component: {fileID: 896723358601034280}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -290,7 +290,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0.089, z: 0}
---- !u!114 &8533697957308446225
+--- !u!114 &896723358601034280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,16 +299,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8353274025366706323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7bbefdc6866c44a98c18e67f7e35bb, type: 3}
+  m_Script: {fileID: 11500000, guid: d9fb8aab286be924dbaff66adca453e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _head: {fileID: 6653194064373933483}
-  _firePoints:
-  - {fileID: 3920111483017080844}
-  _bullet: {fileID: 6762531970089644249, guid: 7c9e4854466c4004f8c3b1d783664aa0, type: 3}
-  _range: 15
-  _rotationSpeed: 3
-  _fireRate: 1
 --- !u!1 &9022131123396540323
 GameObject:
   m_ObjectHideFlags: 0
