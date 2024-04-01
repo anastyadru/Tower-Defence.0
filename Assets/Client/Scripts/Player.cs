@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
                 bullet1.Find(_target);
             }
 
-            yield return new WaitForSeconds(0.1f); // Задержка между выстрелами
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
