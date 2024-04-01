@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _range = 15;
     [SerializeField] private float _rotationSpeed = 3;
-    [SerializeField] private float _fireRate = 0.33333f;
+    [SerializeField] private float _fireRate = 0.5f;
 
     private Transform _target;
     private Enemy _nearestEnemy;
@@ -50,21 +50,27 @@ public class Player : MonoBehaviour
 
             if (_countdown <= 0)
             {
-                for(int i = 0; i < _firePoints.Length; i++)
-                {
-                    GameObject bullet = Instantiate(_bullet, _firePoints[i].position, _firePoints[i].rotation);
-                    Bullet bullet1 = bullet.GetComponent<Bullet>();
-
-                    if (bullet1 != null)
-                    {
-                        bullet1.Find(_target);
-                    }
-                }
-
+                StartCoroutine(ShootBullets());
                 _countdown = 1 / _fireRate;
             }
 
             _countdown -= Time.deltaTime;
+        }
+    }
+
+    private IEnumerator ShootBullets()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject bullet = Instantiate(_bullet, _firePoints[i % _firePoints.Length].position, _firePoints[i % _firePoints.Length].rotation);
+            Bullet bullet1 = bullet.GetComponent<Bullet>();
+
+            if (bullet1 != null)
+            {
+                bullet1.Find(_target);
+            }
+
+            yield return new WaitForSeconds(0.1f); // Задержка между выстрелами
         }
     }
 

@@ -81,7 +81,7 @@ MonoBehaviour:
   _bullet: {fileID: 6762531970089644249, guid: 7c9e4854466c4004f8c3b1d783664aa0, type: 3}
   _range: 15
   _rotationSpeed: 3
-  _fireRate: 0.3
+  _fireRate: 0.5
 --- !u!1 &5427405909461124211
 GameObject:
   m_ObjectHideFlags: 0

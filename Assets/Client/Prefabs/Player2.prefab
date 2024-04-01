@@ -307,7 +307,7 @@ MonoBehaviour:
   _bullet: {fileID: 0}
   _range: 15
   _rotationSpeed: 3
-  _fireRate: 0.3
+  _fireRate: 1
 --- !u!1 &9022131123396540323
 GameObject:
   m_ObjectHideFlags: 0
