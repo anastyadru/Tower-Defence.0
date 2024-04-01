@@ -10,7 +10,7 @@ public class Player2 : MonoBehaviour
 
     [SerializeField] private float _range = 15;
     [SerializeField] private float _rotationSpeed = 3;
-    [SerializeField] private float _fireRate = 1;
+    [SerializeField] private float _fireRate = 0.33333f;
 
     private Transform _target;
     private Enemy _nearestEnemy;
