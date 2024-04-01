@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerBtn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject playerObject;
 
-    // Update is called once per frame
-    void Update()
+    public GameObject PlayerObject
     {
+        get
+        {
+
+            return playerObject;
+        }
         
     }
 }
