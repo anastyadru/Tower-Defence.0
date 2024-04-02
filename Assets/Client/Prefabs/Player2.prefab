@@ -302,9 +302,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fb8aab286be924dbaff66adca453e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _head: {fileID: 0}
-  _firePoints: []
-  _bullet: {fileID: 0}
+  _head: {fileID: 6653194064373933483}
+  _firePoints:
+  - {fileID: 3920111483017080844}
+  - {fileID: 5501883476517099869}
+  - {fileID: 4407204134559867051}
+  _bullet: {fileID: 6762531970089644249, guid: 7c9e4854466c4004f8c3b1d783664aa0, type: 3}
   _range: 15
   _rotationSpeed: 3
   _fireRate: 1
