@@ -19,36 +19,34 @@ public class Player2 : MonoBehaviour
     
     private void Update()
     {
-        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        _enemies = FindObjectsOfType<Enemy>();
         float shortestDistance = Mathf.Infinity;
 
-        foreach (Enemy enemy in enemies)
+        foreach (Enemy enemy in _enemies)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
             if (distance < shortestDistance)
             {
                 shortestDistance = distance;
-                _nearestEnemy = enemy;
             }
         }
 
-        if (_nearestEnemy != null && shortestDistance <= _range)
+        if (_enemies.Length > 0 && shortestDistance <= _range)
         {
-            _target = _nearestEnemy.transform;
-        }
-        else
-        {
-            _target = null;
+            _targets.Clear();
+            foreach (Enemy enemy in _enemies)
+            {
+                float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                if (distance <= _range)
+                {
+                    _targets.Add(enemy);
+                }
+            }
         }
 
-        if (_target != null)
+        if (_targets.Count > 0)
         {
-            Vector3 direction = _target.position - transform.position;
-            Quaternion look = Quaternion.LookRotation(direction);
-            Vector3 rotation = Quaternion.Lerp(_head.rotation, look, _rotationSpeed * Time.deltaTime).eulerAngles;
-            _head.rotation = Quaternion.Euler(0, rotation.y, 0);
-
             if (_countdown <= 0)
             {
                 StartCoroutine(ShootBullets());
@@ -66,12 +64,13 @@ public class Player2 : MonoBehaviour
             GameObject bullet = Instantiate(_bullet, _firePoints[i % _firePoints.Length].position, _firePoints[i % _firePoints.Length].rotation);
             Bullet bullet1 = bullet.GetComponent<Bullet>();
 
-            if (bullet1 != null)
+            if (bullet1 != null && _targets.Count > 0)
             {
-                bullet1.Find(_target);
+                bullet1.Find(_targets[_currentTargetIndex].transform);
+                _currentTargetIndex = (_currentTargetIndex + 1) % _targets.Count;
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f); // Задержка между выстрелами
         }
     }
 
