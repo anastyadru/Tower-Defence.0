@@ -20,8 +20,11 @@ public class PlayerManager : MonoBehaviour
 
     public void PlacePlayer(RaycastHit2D hit)
     {
-        GameObject newPlayer = Instantiate(playerBtnPressed.PlayerObject);
-        newPlayer.transform.position = hit.transform.position;
+        if (!EventSystem.current.IsPointerOverGameObject() && playerBtnPressed != null)
+        {
+            GameObject newPlayer = Instantiate(playerBtnPressed.PlayerObject);
+            newPlayer.transform.position = hit.transform.position;
+        }
     }
 
     public void SelectedPlayer(PlayerBtn playerSelected)
