@@ -8,6 +8,7 @@ public class PlayerManager : Loader<PlayerManager>
 
     public void SelectedPlayer(PlayerBtn playerSelected)
     {
-        
+        playerBtnPressed = playerSelected;
+        Debug.Log("Presse" + playerBtnPressed.gameObject);
     }
 }
