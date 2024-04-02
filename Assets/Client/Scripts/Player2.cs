@@ -12,8 +12,9 @@ public class Player2 : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 3;
     [SerializeField] private float _fireRate = 1;
 
-    private Transform _target;
-    private Enemy _nearestEnemy;
+    private List<Enemy> _targets = new List<Enemy>();
+    private Enemy[] _enemies;
+    private int _currentTargetIndex = 0;
     private float _countdown;
     
     private void Update()
