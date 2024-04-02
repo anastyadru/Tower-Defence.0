@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : Loader<PlayerManager>
+public class PlayerManager : MonoBehaviour
 {
     private PlayerBtn playerBtnPressed;
 
