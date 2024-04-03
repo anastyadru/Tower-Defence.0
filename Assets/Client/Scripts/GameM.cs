@@ -20,7 +20,7 @@ public class GameM : MonoBehaviour
 	[SerializeField] private float _spawnInterval = 1;
 	[SerializeField] private float _startTime = 5;
     
-    public int _gold = 300;
+    public int _gold = 150;
 	public int _playerCost = 50;
 
 	private int[] _enemyCounts = new int[] { 4, 5, 6, 3, 2, 7, 8, 4, 9, 10 };
