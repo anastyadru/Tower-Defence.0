@@ -15,7 +15,7 @@ public class GameM : MonoBehaviour
 	[SerializeField] private Text _waveText;
 	[SerializeField] private Text _waveTimeText;
 
-	[SerializeField] private int _wavesCount = 5;
+	[SerializeField] private int _wavesCount = 10;
 	[SerializeField] private float _nextWaveTime = 10;
 	[SerializeField] private float _spawnInterval = 1;
 	[SerializeField] private float _startTime = 5;
