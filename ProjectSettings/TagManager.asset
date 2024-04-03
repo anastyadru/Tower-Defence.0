@@ -8,6 +8,7 @@ TagManager:
   - StartCube
   - Enemy
   - Bullet
+  - PlayerSide
   layers:
   - Default
   - TransparentFX
