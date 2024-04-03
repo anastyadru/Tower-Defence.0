@@ -92,13 +92,14 @@ public class GameM : MonoBehaviour
 
 	IEnumerator Spawn()
 	{
-		_waveIndex++;
-		
-		for(int i = 0; i < _waveIndex; i++)
+		if (_waveIndex < _enemyCounts.Length)
 		{
-			Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
-			yield return new WaitForSeconds(_spawnInterval);
+			for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
+			{
+				Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
+				yield return new WaitForSeconds(_spawnInterval);
+			}
+			_waveIndex++;
 		}
-		_waveIndex++;
 	}
 }
