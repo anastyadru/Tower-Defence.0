@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
         if (!EventSystem.current.IsPointerOverGameObject() && playerBtnPressed != null)
         {
             GameObject newPlayer = Instantiate(playerBtnPressed.PlayerObject);
-            newPlayer.transform.position = hit.transform.position;
+            newPlayer.transform.position = hit.point;
         }
     }
 
