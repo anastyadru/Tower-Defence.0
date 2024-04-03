@@ -11,10 +11,12 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePoint, Vector2.zero);
-
-            PlacePlayer(hit);
+            Vector3 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(mousePoint, Vector3.forward, out hit))
+            {
+                PlacePlayer(hit);
+            }
         }
     }
 
