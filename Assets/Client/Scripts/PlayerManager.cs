@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void PlacePlayer(RaycastHit2D hit)
+    public void PlacePlayer(RaycastHit hit)
     {
         if (!EventSystem.current.IsPointerOverGameObject() && playerBtnPressed != null)
         {
