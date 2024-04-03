@@ -529,7 +529,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 2130317099}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &86519335
 BoxCollider:
@@ -4194,7 +4194,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 2130317099}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &886843772
 BoxCollider:
@@ -5141,7 +5141,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 2130317099}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1001664890
 BoxCollider:
@@ -5896,7 +5896,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 2130317099}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1134933325
 BoxCollider:
@@ -7364,7 +7364,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 2130317099}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1343656559
 BoxCollider:
@@ -8866,7 +8866,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 2130317099}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1686327635
 BoxCollider:
@@ -9350,7 +9350,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 2130317099}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1791068082
 BoxCollider:
@@ -10674,7 +10674,7 @@ Transform:
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 2130317099}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2081746550
 BoxCollider:
@@ -10972,7 +10972,6 @@ Transform:
   m_LocalPosition: {x: -16.33888, y: -1.2, z: 18.94989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1406293017}
   - {fileID: 886843771}
   - {fileID: 86519334}
   - {fileID: 1686327634}
@@ -10981,6 +10980,7 @@ Transform:
   - {fileID: 1134933324}
   - {fileID: 1001664889}
   - {fileID: 2081746549}
+  - {fileID: 1406293017}
   - {fileID: 654696214}
   - {fileID: 349631583}
   - {fileID: 905373322}
@@ -11178,11 +11178,11 @@ MonoBehaviour:
   _startCube: {fileID: 217506937}
   _waveText: {fileID: 1134971362}
   _waveTimeText: {fileID: 1515869976}
-  _wavesCount: 5
+  _wavesCount: 10
   _nextWaveTime: 10
-  _spawnInterval: 1
+  _spawnInterval: 3
   _startTime: 5
-  _gold: 50
+  _gold: 150
   _playerCost: 50
 --- !u!4 &2139045043
 Transform:
