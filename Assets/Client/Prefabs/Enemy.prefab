@@ -1424,7 +1424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7d75751803ff34e9d49419461ba43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _health: 300
   _healthText: {fileID: 2892157149668795841}
   _killReward: 25
   agent: {fileID: 7537156157585502403}
