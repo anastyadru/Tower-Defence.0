@@ -11180,7 +11180,7 @@ MonoBehaviour:
   _waveTimeText: {fileID: 1515869976}
   _wavesCount: 10
   _nextWaveTime: 10
-  _spawnInterval: 3
+  _spawnInterval: 1
   _startTime: 5
   _gold: 150
   _playerCost: 50
