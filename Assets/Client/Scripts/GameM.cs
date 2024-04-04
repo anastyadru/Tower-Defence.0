@@ -88,6 +88,11 @@ public class GameM : MonoBehaviour
         }
 
         _healthText.text = "Health: " + _health;
+        
+        if (_waveIndex > 0 && damage >= 10)
+        {
+	        damage -= 10;
+        }
     }
 
 	IEnumerator Spawn()
@@ -99,7 +104,7 @@ public class GameM : MonoBehaviour
 				Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
 				yield return new WaitForSeconds(_spawnInterval);
 			}
-			TakeDamage(10 * _enemyCounts[_waveIndex]);
+			// TakeDamage(10 * _enemyCounts[_waveIndex]);
 			_waveIndex++;
 		}
 	}
