@@ -99,6 +99,7 @@ public class GameM : MonoBehaviour
 				Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
 				yield return new WaitForSeconds(_spawnInterval);
 			}
+			TakeDamage(10 * _enemyCounts[_waveIndex]);
 			_waveIndex++;
 		}
 	}
