@@ -60,7 +60,6 @@ public class GameM : MonoBehaviour
 		{
 			StartCoroutine(Spawn());
 			_startTime = _nextWaveTime;
-			enemy.SetDamage(_waveIndex * 10); // Устанавливаем урон в зависимости от номера волны
 		}
 
 		_startTime -= Time.deltaTime;
