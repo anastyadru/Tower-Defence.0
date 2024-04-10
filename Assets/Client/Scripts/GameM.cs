@@ -60,6 +60,7 @@ public class GameM : MonoBehaviour
 		{
 			StartCoroutine(Spawn());
 			_startTime = _nextWaveTime;
+			enemy.SetDamage(_waveIndex * 10); // Устанавливаем урон в зависимости от номера волны
 		}
 
 		_startTime -= Time.deltaTime;
@@ -96,8 +97,7 @@ public class GameM : MonoBehaviour
 		{
 			for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
 			{
-				Enemy newEnemy = Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
-				newEnemy.SetWaveDamageModifier(_waveIndex * 10); // Устанавливаем модификатор урона в зависимости от номера волны
+				Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
 				yield return new WaitForSeconds(_spawnInterval);
 			}
 			_waveIndex++;
