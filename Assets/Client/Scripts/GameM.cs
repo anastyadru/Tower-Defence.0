@@ -96,7 +96,8 @@ public class GameM : MonoBehaviour
 		{
 			for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
 			{
-				Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
+				Enemy newEnemy = Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
+				newEnemy.SetWaveDamageModifier(_waveIndex * 10); // Устанавливаем модификатор урона в зависимости от номера волны
 				yield return new WaitForSeconds(_spawnInterval);
 			}
 			_waveIndex++;
