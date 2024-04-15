@@ -11,16 +11,17 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(mousePoint, Vector3.forward, out hit))
+            Vector2 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePoint, Vector2.zero);
+                
+            if (hit.collider.tag == "PlayerSide")
             {
                 PlacePlayer(hit);
             }
         }
     }
 
-    public void PlacePlayer(RaycastHit hit)
+    public void PlacePlayer(RaycastHit2D hit)
     {
         if (!EventSystem.current.IsPointerOverGameObject() && playerBtnPressed != null)
         {
