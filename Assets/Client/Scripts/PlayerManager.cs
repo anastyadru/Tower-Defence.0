@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
             Vector2 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePoint, Vector2.zero);
                 
-            if (hit.collider.tag == "PlayerSide")
+            if (hit.collider != null && hit.collider.tag == "PlayerSide")
             {
                 PlacePlayer(hit);
             }
