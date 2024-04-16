@@ -11,22 +11,25 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePoint, Vector2.zero);
-                
-            if (hit.collider != null && hit.collider.tag == "PlayerSide")
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
             {
-                PlacePlayer(hit);
+                if (hit.collider != null && hit.collider.CompareTag("PlayerSide"))
+                {
+                    PlacePlayer(hit.point);
+                }
             }
         }
     }
 
-    public void PlacePlayer(RaycastHit2D hit)
+    public void PlacePlayer(Vector3 position)
     {
         if (!EventSystem.current.IsPointerOverGameObject() && playerBtnPressed != null)
         {
             GameObject newPlayer = Instantiate(playerBtnPressed.PlayerObject);
-            newPlayer.transform.position = hit.point;
+            newPlayer.transform.position = position;
         }
     }
 
