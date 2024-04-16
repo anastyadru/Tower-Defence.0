@@ -30,9 +30,13 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void SelectedPlayer(PlayerBtn playerSelected)
+    public void SelectedPlayer(GameObject playerSelectedObject)
     {
-        playerBtnPressed = playerSelected;
-        Debug.Log("Pressed" + playerBtnPressed.gameObject);
+        PlayerBtn playerSelected = playerSelectedObject.GetComponent<PlayerBtn>();
+        if (playerSelected != null)
+        {
+            playerBtnPressed = playerSelected;
+            Debug.Log("Pressed" + playerBtnPressed.gameObject);
+        }
     }
 }
