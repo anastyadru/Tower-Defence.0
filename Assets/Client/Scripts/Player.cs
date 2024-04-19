@@ -67,8 +67,7 @@ public class Player : MonoBehaviour
 
             if (bullet1 != null)
             {
-                int waveIndex = GameManager.Instance.GetCurrentWaveIndex(); // Получаем текущий индекс волны
-                bullet1.Find(_target, waveIndex); // Передаем в метод Find текущий индекс волны
+                bullet1.Find(_target);
             }
 
             yield return new WaitForSeconds(0.1f);
