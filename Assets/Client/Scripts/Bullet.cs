@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float _speed = 50;
     
     private Transform _target;
+    private int _bulletsRequired; // Количество пуль, необходимых для убийства врага
 
     public void Find(Transform target)
     {
