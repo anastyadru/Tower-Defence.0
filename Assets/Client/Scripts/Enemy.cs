@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int _health = 300;
+    [SerializeField] private int _health = 1000;
     [SerializeField] private TextMesh _healthText;
     
     [SerializeField] private int _killReward = 5;
