@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int _damage = 100;
     [SerializeField] private float _speed = 50;
     
     private Transform _target;
@@ -23,7 +22,7 @@ public class Bullet : MonoBehaviour
 
             if(direction.magnitude <= distance)
             {
-                _target.GetComponent<Enemy>().TakeDamage(_damage);
+                _target.GetComponent<Enemy>().TakeDamage(int.MaxValue);
                 Destroy(gameObject);
             }
             else
