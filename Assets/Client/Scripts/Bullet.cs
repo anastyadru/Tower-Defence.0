@@ -47,5 +47,6 @@ public class Bullet : MonoBehaviour
     public void SetWave(int wave)
     {
         _currentWave = wave;
+        _bulletsRequired = wave; // Устанавливаем количество пуль, учитывая текущую волну
     }
 }
