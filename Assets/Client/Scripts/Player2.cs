@@ -71,7 +71,7 @@ public class Player2 : MonoBehaviour
 
             if (bullet1 != null && _targets.Count > 0)
             {
-                bullet1.Find(_targets[_currentTargetIndex].transform);
+                bullet1.Find(_targets[_currentTargetIndex].transform, 0);
                 _currentTargetIndex = (_currentTargetIndex + 1) % _targets.Count;
             }
 
