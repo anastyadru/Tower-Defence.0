@@ -8,11 +8,13 @@ public class Bullet : MonoBehaviour
     
     private Transform _target;
     private int _bulletsRequired; // Количество пуль, необходимых для убийства врага
+    
+    private int _currentWave = 1; // Текущая волна
 
     public void Find(Transform target, int bulletsRequired)
     {
         _target = target;
-        _bulletsRequired = bulletsRequired;
+        _bulletsRequired = bulletsRequired + _currentWave - 1; // Устанавливаем количество пуль, учитывая текущую волну
     }
 
     private void Update()
@@ -40,5 +42,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    
+    public void SetWave(int wave)
+    {
+        _currentWave = wave;
     }
 }
