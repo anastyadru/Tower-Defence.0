@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private int _damage = 100;
     [SerializeField] private float _speed = 50;
     
     private Transform _target;
-    private int _damage = 100;
-    private int _currentWaveDamageMultiplier = 1;
 
-    public void Find(Transform target, int waveIndex)
+    public void Find(Transform target)
     {
         _target = target;
-        _currentWaveDamageMultiplier = waveIndex + 1; // Устанавливаем уровень урона для текущей волны
-        _damage = 100 * _currentWaveDamageMultiplier; // Увеличиваем урон в зависимости от текущей волны
     }
 
     private void Update()
