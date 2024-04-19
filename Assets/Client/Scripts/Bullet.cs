@@ -9,9 +9,10 @@ public class Bullet : MonoBehaviour
     private Transform _target;
     private int _bulletsRequired; // Количество пуль, необходимых для убийства врага
 
-    public void Find(Transform target)
+    public void Find(Transform target, int bulletsRequired)
     {
         _target = target;
+        _bulletsRequired = bulletsRequired;
     }
 
     private void Update()
@@ -23,8 +24,12 @@ public class Bullet : MonoBehaviour
 
             if(direction.magnitude <= distance)
             {
-                _target.GetComponent<Enemy>().TakeDamage(int.MaxValue);
-                Destroy(gameObject);
+                _bulletsRequired--; // Уменьшаем количество пуль, использованных для убийства врага
+                if (_bulletsRequired <= 0)
+                {
+                    _target.GetComponent<Enemy>().TakeDamage(int.MaxValue);
+                    Destroy(gameObject);
+                }
             }
             else
             {
