@@ -47,6 +47,11 @@ public class Player2 : MonoBehaviour
 
         if (_targets.Count > 0)
         {
+            Vector3 direction = _targets[_currentTargetIndex].transform.position - _head.position;
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            Vector3 rotation = Quaternion.Lerp(_head.rotation, lookRotation, Time.deltaTime * _rotationSpeed).eulerAngles;
+            _head.rotation = Quaternion.Euler(0, rotation.y, 0);
+
             if (_countdown <= 0)
             {
                 StartCoroutine(ShootBullets());
@@ -66,7 +71,7 @@ public class Player2 : MonoBehaviour
 
             if (bullet1 != null && _targets.Count > 0)
             {
-                bullet1.Find(_targets[_currentTargetIndex].transform, 3);
+                bullet1.Find(_targets[_currentTargetIndex].transform);
                 _currentTargetIndex = (_currentTargetIndex + 1) % _targets.Count;
             }
 

@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
 
             if (bullet1 != null)
             {
-                bullet1.Find(_target, 3);
+                bullet1.Find(_target);
             }
 
             yield return new WaitForSeconds(0.1f);
