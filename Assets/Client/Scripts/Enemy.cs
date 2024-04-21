@@ -33,10 +33,16 @@ public class Enemy : MonoBehaviour
         {
             GameM.instance._gold += _killReward;
             GameM.instance.UpdateGold();
-            Destroy(gameObject);
+            StartCoroutine(DestroyEnemy());
         }
 
         _healthText.text = _health.ToString();
+    }
+    
+    private IEnumerator DestroyEnemy()
+    {
+        yield return new WaitForSeconds(0.1f); // Задержка перед уничтожением
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,7 +50,7 @@ public class Enemy : MonoBehaviour
         if(other.CompareTag("EndCube"))
         {
             GameM.instance.TakeDamage(_health);
-            DestroyImmediate(gameObject, true);
+            Destroy(gameObject);
         }
     }
 }
