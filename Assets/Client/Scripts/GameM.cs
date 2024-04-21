@@ -11,6 +11,7 @@ public class GameM : MonoBehaviour
 	[SerializeField] private Text _goldText;
 
 	[SerializeField] private Enemy _enemy;
+	[SerializeField] private GameObject _bullet;
 	[SerializeField] private GameObject _startCube;
 	[SerializeField] private Text _waveText;
 	[SerializeField] private Text _waveTimeText;
@@ -19,10 +20,8 @@ public class GameM : MonoBehaviour
 	[SerializeField] private float _nextWaveTime = 10;
 	[SerializeField] private float _spawnInterval = 1;
 	[SerializeField] private float _startTime = 5;
-	
-	[SerializeField] private GameObject _bullet;
-    
-    public int _gold = 150;
+
+	public int _gold = 150;
 	public int _playerCost = 50;
 
 	private int[] _enemyCounts = new int[] { 4, 5, 6, 3, 2, 7, 8, 4, 9, 10 };
