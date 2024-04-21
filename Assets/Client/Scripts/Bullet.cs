@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int _damage = 1000;
+    private int _baseDamage = 1000; // Начальное значение урона
+    private int _damage; // Текущее значение урона
     [SerializeField] private float _speed = 50;
     
     private Transform _target;
