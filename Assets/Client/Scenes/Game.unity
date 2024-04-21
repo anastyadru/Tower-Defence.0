@@ -11169,6 +11169,7 @@ MonoBehaviour:
   _health: 100
   _goldText: {fileID: 1127118958}
   _enemy: {fileID: 8469634095811030220, guid: 64d18cf84104822449ae61ce624bd75e, type: 3}
+  _bullet: {fileID: 6762531970089644249, guid: 7c9e4854466c4004f8c3b1d783664aa0, type: 3}
   _startCube: {fileID: 217506937}
   _waveText: {fileID: 1134971362}
   _waveTimeText: {fileID: 1515869976}
