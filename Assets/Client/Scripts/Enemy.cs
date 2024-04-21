@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         {
             GameM.instance._gold += _killReward;
             GameM.instance.UpdateGold();
-            Destroy(gameObject);
+            DestroyImmediate(gameObject); // Используем DestroyImmediate вместо Destroy
         }
 
         _healthText.text = _health.ToString();
