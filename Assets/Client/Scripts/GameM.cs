@@ -96,7 +96,8 @@ public class GameM : MonoBehaviour
 		{
 			for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
 			{
-				Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
+				Bullet bullet = Instantiate(_bullet, _startCube.transform.position, _bullet.transform.rotation).GetComponent<Bullet>();
+				bullet.Find(_enemy.transform, _waveIndex); // Передаем текущий индекс волны
 				yield return new WaitForSeconds(_spawnInterval);
 			}
 			_waveIndex++;
