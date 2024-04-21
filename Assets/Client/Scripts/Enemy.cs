@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         {
             GameM.instance._gold += _killReward;
             GameM.instance.UpdateGold();
-            Destroy(gameObject, true);
+            DestroyImmediate(gameObject, true);
         }
 
         _healthText.text = _health.ToString();
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
         if(other.CompareTag("EndCube"))
         {
             GameM.instance.TakeDamage(_health);
-            Destroy(gameObject, true);
+            DestroyImmediate(gameObject, true);
         }
     }
 }
