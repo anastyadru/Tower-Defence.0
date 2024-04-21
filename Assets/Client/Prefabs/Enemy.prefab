@@ -1324,7 +1324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7239503481490988642
 Transform:
   m_ObjectHideFlags: 0
@@ -1424,7 +1424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7d75751803ff34e9d49419461ba43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: -3000
+  _health: 1000
   _healthText: {fileID: 2892157149668795841}
   _killReward: 5
   agent: {fileID: 7537156157585502403}
