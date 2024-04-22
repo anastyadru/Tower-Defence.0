@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         {
             GameM.instance._gold += _killReward;
             GameM.instance.UpdateGold();
-            if (gameObject.activeSelf) // Проверяем, активен ли объект
+            if (gameObject.activeSelf)
             {
                 StartCoroutine(DestroyEnemy());
             }
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     
     private IEnumerator DestroyEnemy()
     {
-        yield return new WaitForSeconds(0.1f); // Задержка перед уничтожением
+        yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }
 
