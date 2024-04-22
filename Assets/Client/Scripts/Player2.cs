@@ -75,7 +75,7 @@ public class Player2 : MonoBehaviour
                 _currentTargetIndex = (_currentTargetIndex + 1) % _targets.Count;
             }
 
-            yield return new WaitForSeconds(0.1f); // Задержка между выстрелами
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
