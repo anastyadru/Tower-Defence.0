@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
 
             if (bullet1 != null)
             {
-                bullet1.Find(_target, 0); // Передаем 0 в качестве waveIndex
+                bullet1.Find(_target);
             }
 
             yield return new WaitForSeconds(0.1f);
