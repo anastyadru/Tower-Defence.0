@@ -33,7 +33,10 @@ public class Enemy : MonoBehaviour
         {
             GameM.instance._gold += _killReward;
             GameM.instance.UpdateGold();
-            StartCoroutine(DestroyEnemy());
+            if (gameObject.activeSelf) // Проверяем, активен ли объект
+            {
+                StartCoroutine(DestroyEnemy());
+            }
         }
 
         _healthText.text = _health.ToString();
