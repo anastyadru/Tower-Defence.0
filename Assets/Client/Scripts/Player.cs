@@ -24,7 +24,6 @@ public class Player : MonoBehaviour
         foreach (Enemy enemy in enemies)
         {
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
-
             if (distance < shortestDistance)
             {
                 shortestDistance = distance;
