@@ -46,7 +46,7 @@ public class GameM : MonoBehaviour
   {
     Enemy[] enemies = FindObjectsOfType<Enemy>();
     
-    if(_waveIndex >= _wavesCount && enemies.Length == 0 && !_endGame)
+    if (_waveIndex >= _wavesCount && enemies.Length == 0 && !_endGame && _health > 0)
     {
       _endGame = true;
       Debug.Log("Victory!");
