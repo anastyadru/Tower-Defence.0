@@ -70,6 +70,11 @@ public class GameM : MonoBehaviour
       _waveText.gameObject.SetActive(true);
       _waveText.text = _waveIndex + "/" + _wavesCount + " Wave";
     }
+    
+    if(_waveIndex >= _wavesCount && FindObjectsOfType<Enemy>().Length == 0)
+    {
+      EndGame();
+    }
   }
 
     public void UpdateGold()
@@ -102,4 +107,6 @@ public class GameM : MonoBehaviour
       _waveIndex++;
     }
   }
+  
+  
 }
