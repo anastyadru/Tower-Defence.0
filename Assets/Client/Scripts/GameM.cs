@@ -122,7 +122,7 @@ public class GameM : MonoBehaviour
       enemy.SetActive(false);
     }
     
-    if (_health > 0) // Проверяем, что здоровье больше нуля перед переходом на новую сцену
+    if (_health > 0)
     {
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
