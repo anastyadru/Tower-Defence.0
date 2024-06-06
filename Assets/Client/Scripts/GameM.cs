@@ -110,6 +110,11 @@ public class GameM : MonoBehaviour
   
   public void EndGame()
   {
-    
+    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    foreach (GameObject enemy in enemies)
+    {
+      enemy.SetActive(false);
+    }
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
   }
 }
