@@ -51,6 +51,7 @@ public class GameM : MonoBehaviour
       _endGame = true;
       Debug.Log("Victory!");
       Time.timeScale = 0;
+      EndGame();
     }
 
     if(_waveIndex >= _wavesCount)
@@ -72,11 +73,6 @@ public class GameM : MonoBehaviour
     {
       _waveText.gameObject.SetActive(true);
       _waveText.text = _waveIndex + "/" + _wavesCount + " Wave";
-    }
-    
-    if(_waveIndex >= _wavesCount && FindObjectsOfType<Enemy>().Length == 0)
-    {
-      EndGame();
     }
   }
 
