@@ -108,5 +108,8 @@ public class GameM : MonoBehaviour
     }
   }
   
-  
+  public void EndGame()
+  {
+    
+  }
 }
