@@ -114,7 +114,7 @@ public class GameM : MonoBehaviour
 
   private IEnumerator EndGameCoroutine()
   {
-    yield return new WaitForSeconds(2); // Ждем некоторое время перед загрузкой следующей сцены (можете изменить это значение по вашему усмотрению)
+    yield return new WaitForSeconds(2);
     
     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
     foreach (GameObject enemy in enemies)
