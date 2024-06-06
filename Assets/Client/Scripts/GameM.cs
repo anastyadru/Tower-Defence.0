@@ -109,11 +109,19 @@ public class GameM : MonoBehaviour
   
   public void EndGame()
   {
+    StartCoroutine(EndGameCoroutine());
+  }
+
+  private IEnumerator EndGameCoroutine()
+  {
+    yield return new WaitForSeconds(2); // Ждем некоторое время перед загрузкой следующей сцены (можете изменить это значение по вашему усмотрению)
+    
     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
     foreach (GameObject enemy in enemies)
     {
       enemy.SetActive(false);
     }
+    
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
   }
 }
