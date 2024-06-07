@@ -64,15 +64,17 @@ public class GameM : MonoBehaviour
     {
       StartCoroutine(Spawn());
       _startTime = _nextWaveTime;
+      _waveIndex++;
     }
 
     _startTime -= Time.deltaTime;
     _startTime = Mathf.Clamp(_startTime, 0, Mathf.Infinity);
     _waveTimeText.text = string.Format("{0:00.00}", _startTime);
-    if(_waveIndex > 0)
+    
+    if(_waveIndex >= 0)
     {
       _waveText.gameObject.SetActive(true);
-      _waveText.text = _waveIndex + "/" + _wavesCount + " Wave";
+      _waveText.text = (_waveIndex + 1) + "/" + _wavesCount + " Wave";
     }
   }
 
