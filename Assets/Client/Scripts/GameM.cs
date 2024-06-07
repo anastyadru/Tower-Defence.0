@@ -96,7 +96,7 @@ public class GameM : MonoBehaviour
 
   IEnumerator Spawn()
   {
-    if (_waveIndex < _enemyCounts.Length)
+    if (_waveIndex < _wavesCount)
     {
       for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
       {
