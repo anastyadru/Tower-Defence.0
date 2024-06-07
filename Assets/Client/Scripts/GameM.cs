@@ -111,17 +111,6 @@ public class GameM : MonoBehaviour
   
   public void EndGame()
   {
-    StartCoroutine(EndGameCoroutine());
-  }
-
-  private IEnumerator EndGameCoroutine()
-  {
-    yield return new WaitForSeconds(2);
-    
-    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-    if (enemies.Length == 0 && _health > 0)
-    {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
   }
 }
