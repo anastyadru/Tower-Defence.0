@@ -119,7 +119,7 @@ public class GameM : MonoBehaviour
     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
     foreach (GameObject enemy in enemies)
     {
-      enemy.SetActive(false);
+      Destroy(enemy);
     }
     
     if (_health > 0)
