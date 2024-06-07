@@ -117,12 +117,7 @@ public class GameM : MonoBehaviour
     yield return new WaitForSeconds(2);
     
     GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-    foreach (GameObject enemy in enemies)
-    {
-      Destroy(enemy);
-    }
-    
-    if (_health > 0)
+    if (enemies.Length == 0 && _health > 0)
     {
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
