@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
 
             if(direction.magnitude <= distance)
             {
-                _target.GetComponent<Enemy>().TakeDamage();
+                _target.GetComponent<Enemy>().TakeDamage(1);
                 Destroy(gameObject);
             }
 
