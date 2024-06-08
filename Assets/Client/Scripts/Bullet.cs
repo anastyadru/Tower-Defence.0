@@ -6,14 +6,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private bool _isHoming = false;
     [SerializeField] private float _speed = 50;
+    
+    private int _damage = 1;
+    private int _currentWave = 1;
     
     private Transform _target;
 
-    public void Find(Transform target)
+    public void Find(Transform target, int currentWave)
     {
         _target = target;
+        _currentWave = currentWave;
+        _damage = currentWave;
     }
 
     private void Update()
@@ -25,7 +29,7 @@ public class Bullet : MonoBehaviour
 
             if(direction.magnitude <= distance)
             {
-                _target.GetComponent<Enemy>().TakeDamage(1);
+                _target.GetComponent<Enemy>().TakeDamage(_damage);
                 Destroy(gameObject);
             }
 

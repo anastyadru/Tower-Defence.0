@@ -1,7 +1,6 @@
 // Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +8,6 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _health = 1000;
     [SerializeField] private TextMesh _healthText;
-    
     [SerializeField] private int _killReward = 5;
 
     public NavMeshAgent agent;
@@ -30,13 +28,15 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _health = 0; // Устанавливаем здоровье на 0, чтобы враг моментально умирал
+        _health = 0;
         GameM.instance._gold += _killReward;
         GameM.instance.UpdateGold();
+        
         if (gameObject.activeSelf)
         {
             StartCoroutine(DestroyEnemy());
         }
+        
         _healthText.text = _health.ToString();
     }
     
