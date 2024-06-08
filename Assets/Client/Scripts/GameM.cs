@@ -85,7 +85,7 @@ public class GameM : MonoBehaviour
 
   public void TakeDamage(int damage)
   {
-    _health -= damage;
+    _health -= 10;
     if (_health <= 0)
     {
       _endGame = true;
