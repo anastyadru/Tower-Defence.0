@@ -60,16 +60,16 @@ public class GameM : MonoBehaviour
       return;
     }
 
-    if(_startTime <= 0)
+    if(_nextWaveTime <= 0 && enemies.Length == 0)
     {
       StartCoroutine(Spawn());
-      _startTime = _nextWaveTime;
+      _nextWaveTime = _spawnInterval * _enemyCounts[_waveIndex] + 5; 
       _waveIndex++;
     }
 
-    _startTime -= Time.deltaTime;
-    _startTime = Mathf.Clamp(_startTime, 0, Mathf.Infinity);
-    _waveTimeText.text = string.Format("{0:00.00}", _startTime);
+    _nextWaveTime -= Time.deltaTime;
+    _nextWaveTime = Mathf.Clamp(_nextWaveTime, 0, Mathf.Infinity);
+    _waveTimeText.text = string.Format("{0:00.00}", _nextWaveTime);
     
     if(_waveIndex >= 0)
     {
