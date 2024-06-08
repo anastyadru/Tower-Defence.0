@@ -30,17 +30,13 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _health -= damage;
-        if (_health <= 0)
+        _health = 0; // Устанавливаем здоровье на 0, чтобы враг моментально умирал
+        GameM.instance._gold += _killReward;
+        GameM.instance.UpdateGold();
+        if (gameObject.activeSelf)
         {
-            GameM.instance._gold += _killReward;
-            GameM.instance.UpdateGold();
-            if (gameObject.activeSelf)
-            {
-                StartCoroutine(DestroyEnemy());
-            }
+            StartCoroutine(DestroyEnemy());
         }
-
         _healthText.text = _health.ToString();
     }
     
