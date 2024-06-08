@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
     public NavMeshAgent agent;
     public GameObject EndCube;
+    private int _currentWave = 1;
     
     private void Start()
     {
@@ -28,13 +29,16 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _health = 0;
-        GameM.instance._gold += _killReward;
-        GameM.instance.UpdateGold();
-        
-        if (gameObject.activeSelf)
+        _health -= damage;
+        if (_health <= 0)
         {
-            StartCoroutine(DestroyEnemy());
+            GameM.instance._gold += _killReward * _currentWave;
+            GameM.instance.UpdateGold();
+            
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(DestroyEnemy());
+            }
         }
         
         _healthText.text = _health.ToString();
@@ -53,5 +57,10 @@ public class Enemy : MonoBehaviour
             GameM.instance.TakeDamage(_health);
             Destroy(gameObject);
         }
+    }
+    
+    public void SetWave(int wave)
+    {
+        _currentWave = wave;
     }
 }
