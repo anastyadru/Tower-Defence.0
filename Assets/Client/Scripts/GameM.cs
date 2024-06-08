@@ -91,6 +91,7 @@ public class GameM : MonoBehaviour
       _endGame = true;
       Debug.Log("Defeat");
       Time.timeScale = 0;
+      EndGame2();
     }
 
     _healthText.text = "Health: " + _health;
