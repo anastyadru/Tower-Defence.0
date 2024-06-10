@@ -1,6 +1,7 @@
 // Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.
 
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,11 +9,11 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _health = 1000;
     [SerializeField] private TextMesh _healthText;
+    
     [SerializeField] private int _killReward = 5;
 
     public NavMeshAgent agent;
     public GameObject EndCube;
-    private int _currentWave = 1;
     
     private void Start()
     {
@@ -29,16 +30,13 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _health -= damage;
-        if (_health <= 0)
+        _health = 0;
+        GameM.instance._gold += _killReward;
+        GameM.instance.UpdateGold();
+        
+        if (gameObject.activeSelf)
         {
-            GameM.instance._gold += _killReward * _currentWave;
-            GameM.instance.UpdateGold();
-            
-            if (gameObject.activeSelf)
-            {
-                StartCoroutine(DestroyEnemy());
-            }
+            StartCoroutine(DestroyEnemy());
         }
         
         _healthText.text = _health.ToString();
@@ -57,10 +55,5 @@ public class Enemy : MonoBehaviour
             GameM.instance.TakeDamage(_health);
             Destroy(gameObject);
         }
-    }
-    
-    public void SetWave(int wave)
-    {
-        _currentWave = wave;
     }
 }
