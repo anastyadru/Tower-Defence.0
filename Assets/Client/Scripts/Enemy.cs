@@ -7,10 +7,11 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int _health = 1000;
     [SerializeField] private TextMesh _healthText;
     
     [SerializeField] private int _killReward = 5;
+    
+    private int _health;
 
     public NavMeshAgent agent;
     public GameObject EndCube;
@@ -20,9 +21,16 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         EndCube = GameObject.FindGameObjectWithTag("EndCube");
         
+        SetHealthByWave();
         _healthText.text = _health.ToString();
     }
     
+    private void SetHealthByWave()
+    {
+        int currentWave = GameM.instance.GetCurrentWave();
+        _health = currentWave;
+    }
+
     private void Update()
     {
         agent.SetDestination(EndCube.transform.position);
@@ -30,12 +38,11 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _health = 0;
-        GameM.instance._gold += _killReward;
-        GameM.instance.UpdateGold();
-        
-        if (gameObject.activeSelf)
+        _health -= damage;
+        if (_health <= 0)
         {
+            GameM.instance._gold += _killReward;
+            GameM.instance.UpdateGold();
             StartCoroutine(DestroyEnemy());
         }
         
