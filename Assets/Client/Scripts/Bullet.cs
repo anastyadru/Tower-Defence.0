@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int _damage = 1000;
+    [SerializeField] private int _damage = 1;
     [SerializeField] private float _speed = 50;
     
     private Transform _target;
@@ -23,9 +23,13 @@ public class Bullet : MonoBehaviour
             Vector3 direction = _target.position - transform.position;
             float distance = _speed * Time.deltaTime;
 
-            if(direction.magnitude <= distance)
+            if (direction.magnitude <= distance)
             {
-                _target.GetComponent<Enemy>().TakeDamage(_damage);
+                Enemy enemy = _target.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(_damage);
+                }
                 Destroy(gameObject);
             }
 
