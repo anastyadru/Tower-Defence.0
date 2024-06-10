@@ -18,15 +18,15 @@ public class GameM : MonoBehaviour
   [SerializeField] private Text _waveText;
   [SerializeField] private Text _waveTimeText;
 
-  [SerializeField] private int _wavesCount = 15;
-  [SerializeField] private float _nextWaveTime = 15;
+  [SerializeField] private int _wavesCount = 16;
+  [SerializeField] private float _nextWaveTime = 12;
   [SerializeField] private float _spawnInterval = 1;
   [SerializeField] private float _startTime = 5;
     
   public int _gold = 150;
   public int _playerCost = 50;
 
-  private int[] _enemyCounts = new int[] { 4, 5, 6, 3, 2, 7, 8, 4, 3, 6, 9, 9, 1, 10, 8 };
+  private int[] _enemyCounts = new int[] { 4, 5, 6, 3, 2, 7, 8, 4, 3, 6, 9, 9, 1, 10, 8, 2 };
   private int _waveIndex;
   private bool _endGame;
 
