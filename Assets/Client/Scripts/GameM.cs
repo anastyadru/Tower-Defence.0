@@ -119,4 +119,9 @@ public class GameM : MonoBehaviour
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
   }
+  
+  public int GetCurrentWave()
+  {
+    return _waveIndex;
+  }
 }
