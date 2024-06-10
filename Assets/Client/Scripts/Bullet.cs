@@ -28,8 +28,12 @@ public class Bullet : MonoBehaviour
 
             if(direction.magnitude <= distance)
             {
-                _target.GetComponent<Enemy>().TakeDamage(_damage);
-                Destroy(gameObject);
+                _shotsNeeded--;
+                if (_shotsNeeded <= 0)
+                {
+                    _target.GetComponent<Enemy>().TakeDamage(1000);
+                    Destroy(gameObject);
+                }
             }
 
             transform.Translate(direction.normalized * distance, Space.World);
