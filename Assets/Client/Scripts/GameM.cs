@@ -64,7 +64,6 @@ public class GameM : MonoBehaviour
     {
       StartCoroutine(Spawn());
       _startTime = _nextWaveTime;
-      _waveIndex++;
     }
 
     _startTime -= Time.deltaTime;
