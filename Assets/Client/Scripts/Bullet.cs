@@ -6,14 +6,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int _damage = 1000;
     [SerializeField] private float _speed = 50;
     
     private Transform _target;
+    private int _currentWave = 1;
+    private int _shotsNeeded = 1;
 
-    public void Find(Transform target)
+    public void Find(Transform target, int currentWave)
     {
         _target = target;
+        _currentWave = currentWave;
+        _shotsNeeded = _currentWave;
     }
 
     private void Update()
