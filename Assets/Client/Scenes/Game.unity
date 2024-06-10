@@ -11177,8 +11177,8 @@ MonoBehaviour:
   _startCube: {fileID: 217506937}
   _waveText: {fileID: 1134971362}
   _waveTimeText: {fileID: 1515869976}
-  _wavesCount: 15
-  _nextWaveTime: 15
+  _wavesCount: 16
+  _nextWaveTime: 12
   _spawnInterval: 1
   _startTime: 5
   _gold: 150
