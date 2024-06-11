@@ -109,6 +109,14 @@ public class GameM : MonoBehaviour
     }
   }
   
+  public void StartNextWave()
+  {
+    if (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
+    {
+      StartCoroutine(Spawn());
+    }
+  }
+  
   public void EndGame()
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
