@@ -10,12 +10,6 @@ public class PauseMenu : MonoBehaviour
 {
     public bool PauseGame;
     public GameObject pauseGameMenu;
-    private GameM gameManager;
-    
-    void Start()
-    {
-        gameManager = FindObjectOfType<GameM>();
-    }
 
     void Update()
     {
@@ -50,11 +44,5 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenu");
-    }
-    
-    public void StartNextWave()
-    {
-        gameManager.StartNextWave();
-        Resume();
     }
 }

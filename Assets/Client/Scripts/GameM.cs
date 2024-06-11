@@ -31,8 +31,6 @@ public class GameM : MonoBehaviour
   private bool _endGame;
 
   public static GameM instance;
-  
-  private bool _isWaveInProgress = false;
 
   private void Start()
   {
@@ -108,38 +106,6 @@ public class GameM : MonoBehaviour
         yield return new WaitForSeconds(_spawnInterval);
       }
       _waveIndex++;
-    }
-  }
-  
-  public void StartNextWave()
-  {
-    if (!_isWaveInProgress && _waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
-    {
-      StartCoroutine(StartWave());
-    }
-  }
-  
-  IEnumerator StartWave()
-  {
-    _isWaveInProgress = true;
-    yield return new WaitForSeconds(3); // Пауза перед началом волны (можете изменить продолжительность)
-    
-    if (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
-    {
-      for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
-      {
-        Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
-        yield return new WaitForSeconds(_spawnInterval);
-      }
-      _waveIndex++;
-    }
-
-    yield return new WaitForSeconds(3); // Пауза после окончания волны (можете изменить продолжительность)
-    _isWaveInProgress = false;
-
-    if (_waveIndex >= _wavesCount)
-    {
-      EndGame(); // Завершение игры после прохождения всех волн
     }
   }
   
