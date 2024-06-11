@@ -54,7 +54,7 @@ public class PauseMenu : MonoBehaviour
     
     public void StartNextWave()
     {
-        gameManager.StartNextWave(); // Вызываем метод StartNextWave() из GameM
-        Resume(); // Продолжаем игру после начала следующей волны
+        gameManager.StartNextWave();
+        Resume();
     }
 }
