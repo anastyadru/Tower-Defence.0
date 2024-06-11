@@ -128,11 +128,21 @@ public class GameM : MonoBehaviour
   
   public void EndGame()
   {
+    PlayerPrefs.SetInt("GamePaused", _gamePaused ? 1 : 0);
+    PlayerPrefs.SetInt("Health", _health);
+    PlayerPrefs.SetInt("Gold", _gold);
+    PlayerPrefs.SetInt("WaveIndex", _waveIndex);
+
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
   }
   
   public void EndGame2()
   {
+    PlayerPrefs.SetInt("GamePaused", _gamePaused ? 1 : 0);
+    PlayerPrefs.SetInt("Health", _health);
+    PlayerPrefs.SetInt("Gold", _gold);
+    PlayerPrefs.SetInt("WaveIndex", _waveIndex);
+    
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
   }
   
