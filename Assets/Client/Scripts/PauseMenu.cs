@@ -10,6 +10,12 @@ public class PauseMenu : MonoBehaviour
 {
     public bool PauseGame;
     public GameObject pauseGameMenu;
+    private GameM gameManager;
+    
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameM>();
+    }
 
     void Update()
     {
