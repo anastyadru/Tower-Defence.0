@@ -11,6 +11,7 @@ TagManager:
   - PlayerSide
   - Ground
   - player
+  - PLAY
   layers:
   - Default
   - TransparentFX
