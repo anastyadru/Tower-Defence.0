@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject EndCube;
     
+    private bool canMove = false;
+    
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,6 +25,9 @@ public class Enemy : MonoBehaviour
         
         SetHealthByWave();
         _healthText.text = _health.ToString();
+        
+        GameM.instance.OnPlayButtonClicked += StartMoving;
+        GameM.instance.OnStopWaves += StopMoving;
     }
     
     private void SetHealthByWave()
