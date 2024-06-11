@@ -38,7 +38,10 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        agent.SetDestination(EndCube.transform.position);
+        if(canMove)
+        {
+            agent.SetDestination(EndCube.transform.position);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -67,5 +70,21 @@ public class Enemy : MonoBehaviour
             GameM.instance.TakeDamage(_health);
             Destroy(gameObject);
         }
+    }
+    
+    private void StartMoving()
+    {
+        canMove = true;
+    }
+
+    private void StopMoving()
+    {
+        canMove = false;
+    }
+
+    private void OnDestroy()
+    {
+        GameM.instance.OnPlayButtonClicked -= StartMoving;
+        GameM.instance.OnStopWaves -= StopMoving;
     }
 }
