@@ -51,4 +51,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenu");
     }
+    
+    public void StartNextWave()
+    {
+        gameManager.StartNextWave(); // Вызываем метод StartNextWave() из GameM
+        Resume(); // Продолжаем игру после начала следующей волны
+    }
 }
