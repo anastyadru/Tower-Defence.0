@@ -46,7 +46,7 @@ public class GameM : MonoBehaviour
 
     UpdateGold();
     
-    playButton.onClick.AddListener(StartNextWave); // Привязываем метод StartNextWave к событию нажатия кнопки Play
+    playButton.onClick.AddListener(StartNextWave);
   }
   
   public void StartNextWave()
@@ -75,17 +75,17 @@ public class GameM : MonoBehaviour
 
     if (_waveIndex >= _wavesCount)
     {
-      EndGame(); // Завершение игры после прохождения всех волн
+      EndGame();
     }
     else
     {
-      _waitingForPlay = true; // Устанавливаем флаг ожидания нажатия кнопки Play
+      _waitingForPlay = true;
     }
   }
 
   public void PlayerPressedPlay()
   {
-    _waitingForPlay = false; // Пользователь нажал кнопку Play, можно запускать следующую волну
+    _waitingForPlay = false;
   }
 
   public void Update()
