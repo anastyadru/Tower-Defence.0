@@ -31,8 +31,6 @@ public class GameM : MonoBehaviour
   private bool _endGame;
 
   public static GameM instance;
-  
-  private bool _gamePaused = false;
 
   private void Start()
   {
@@ -42,28 +40,13 @@ public class GameM : MonoBehaviour
     _waveText.gameObject.SetActive(false);
 
     UpdateGold();
-    
-    if (PlayerPrefs.HasKey("GamePaused"))
-    {
-      _gamePaused = PlayerPrefs.GetInt("GamePaused") == 1;
-      if (_gamePaused)
-      {
-        Time.timeScale = 0;
-      }
-    }
-  }
-
-  public void OnPlayButtonClicked()
-  {
-    _gamePaused = false;
-    Time.timeScale = 1;
   }
 
   public void Update()
   {
     Enemy[] enemies = FindObjectsOfType<Enemy>();
     
-    if (_waveIndex >= _wavesCount && enemies.Length == 0 && !_endGame && _health > 0 && !_gamePaused)
+    if (_waveIndex >= _wavesCount && enemies.Length == 0 && !_endGame && _health > 0)
     {
       _endGame = true;
       Debug.Log("Victory!");
@@ -128,21 +111,11 @@ public class GameM : MonoBehaviour
   
   public void EndGame()
   {
-    PlayerPrefs.SetInt("GamePaused", _gamePaused ? 1 : 0);
-    PlayerPrefs.SetInt("Health", _health);
-    PlayerPrefs.SetInt("Gold", _gold);
-    PlayerPrefs.SetInt("WaveIndex", _waveIndex);
-
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
   }
   
   public void EndGame2()
   {
-    PlayerPrefs.SetInt("GamePaused", _gamePaused ? 1 : 0);
-    PlayerPrefs.SetInt("Health", _health);
-    PlayerPrefs.SetInt("Gold", _gold);
-    PlayerPrefs.SetInt("WaveIndex", _waveIndex);
-    
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
   }
   
