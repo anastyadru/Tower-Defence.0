@@ -63,35 +63,30 @@ public class GameM : MonoBehaviour
   
   IEnumerator StartWave()
   {
-    _isWaveInProgress = true;
-
-    if (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
+    while (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
     {
-      for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
+      if (!_isWaveInProgress)
       {
-        Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
-        yield return new WaitForSeconds(_spawnInterval);
+        _isWaveInProgress = true;
+
+        for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
+        {
+          Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
+          yield return new WaitForSeconds(_spawnInterval);
+        }
+
+        _waveIndex++;
+        _isWaveInProgress = false;
+
+        if (_waveIndex >= _wavesCount)
+        {
+          EndGame();
+        }
       }
-      _waveIndex++;
-    }
-
-    _isWaveInProgress = false;
-
-    if (_waveIndex >= _wavesCount)
-    {
-      EndGame();
-    }
-    else
-    {
-      _waitingForPlay = true;
+      yield return null;
     }
   }
-
-  public void PlayerPressedPlay()
-  {
-    _waitingForPlay = false;
-  }
-
+  
   public void Update()
   {
     Enemy[] enemies = FindObjectsOfType<Enemy>();
