@@ -21,7 +21,7 @@ public class GameM : MonoBehaviour
   [SerializeField] private int _wavesCount = 16;
   [SerializeField] private float _nextWaveTime = 12;
   [SerializeField] private float _spawnInterval = 1;
-  // [SerializeField] private float _startTime = 5;
+  [SerializeField] private float _startTime = 5;
     
   public int _gold = 150;
   public int _playerCost = 50;
@@ -35,8 +35,8 @@ public class GameM : MonoBehaviour
   private bool _isWaveInProgress = false;
   private bool _waitingForPlay = true;
   
-  // public event System.Action OnPlayButtonClicked;
-  // public event System.Action OnStopWaves;
+  public event System.Action OnPlayButtonClicked;
+  public event System.Action OnStopWaves;
   
   public Button playButton;
 
@@ -49,44 +49,48 @@ public class GameM : MonoBehaviour
 
     UpdateGold();
     
-    playButton.onClick.AddListener(PlayerPressedPlay);
+    playButton.onClick.AddListener(StartNextWave);
   }
   
-  public void PlayerPressedPlay()
+  public void StartNextWave()
   {
-    if (_waitingForPlay)
+    if (!_isWaveInProgress && !_waitingForPlay && _waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
     {
-      _waitingForPlay = false;
       StartCoroutine(StartWave());
     }
   }
   
   IEnumerator StartWave()
   {
-    while (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
+    _isWaveInProgress = true;
+
+    if (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
     {
-      if (!_isWaveInProgress)
+      for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
       {
-        _isWaveInProgress = true;
-
-        for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
-        {
-          Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
-          yield return new WaitForSeconds(_spawnInterval);
-        }
-
-        _waveIndex++;
-        _isWaveInProgress = false;
-
-        if (_waveIndex >= _wavesCount)
-        {
-          EndGame();
-        }
+        Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
+        yield return new WaitForSeconds(_spawnInterval);
       }
-      yield return null;
+      _waveIndex++;
+    }
+
+    _isWaveInProgress = false;
+
+    if (_waveIndex >= _wavesCount)
+    {
+      EndGame();
+    }
+    else
+    {
+      _waitingForPlay = true;
     }
   }
-  
+
+  public void PlayerPressedPlay()
+  {
+    _waitingForPlay = false;
+  }
+
   public void Update()
   {
     Enemy[] enemies = FindObjectsOfType<Enemy>();
