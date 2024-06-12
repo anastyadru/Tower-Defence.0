@@ -28,8 +28,12 @@ public class Enemy : MonoBehaviour
         SetHealthByWave();
         _healthText.text = _health.ToString();
         
-        GameM.instance.OnPlayButtonClicked += StartMoving;
-        GameM.instance.OnStopWaves += StopMoving;
+        gameManager = GameObject.FindObjectOfType<GameM>();
+        if (gameManager != null)
+        {
+            gameManager.OnPlayButtonClicked += StartMoving;
+            gameManager.OnStopWaves += StopMoving;
+        }
     }
     
     private void SetHealthByWave()
