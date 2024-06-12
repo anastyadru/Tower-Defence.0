@@ -21,7 +21,7 @@ public class GameM : MonoBehaviour
   [SerializeField] private int _wavesCount = 16;
   [SerializeField] private float _nextWaveTime = 12;
   [SerializeField] private float _spawnInterval = 1;
-  [SerializeField] private float _startTime = 5;
+  // [SerializeField] private float _startTime = 5;
     
   public int _gold = 150;
   public int _playerCost = 50;
@@ -35,8 +35,8 @@ public class GameM : MonoBehaviour
   private bool _isWaveInProgress = false;
   private bool _waitingForPlay = true;
   
-  public event System.Action OnPlayButtonClicked;
-  public event System.Action OnStopWaves;
+  // public event System.Action OnPlayButtonClicked;
+  // public event System.Action OnStopWaves;
   
   public Button playButton;
 
@@ -49,13 +49,14 @@ public class GameM : MonoBehaviour
 
     UpdateGold();
     
-    playButton.onClick.AddListener(StartNextWave);
+    playButton.onClick.AddListener(PlayerPressedPlay);
   }
   
-  public void StartNextWave()
+  public void PlayerPressedPlay()
   {
-    if (!_isWaveInProgress && !_waitingForPlay && _waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
+    if (_waitingForPlay)
     {
+      _waitingForPlay = false;
       StartCoroutine(StartWave());
     }
   }
