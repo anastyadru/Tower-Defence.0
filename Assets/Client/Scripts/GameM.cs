@@ -31,6 +31,14 @@ public class GameM : MonoBehaviour
   private bool _endGame;
 
   public static GameM instance;
+  
+  private bool _isWaveInProgress = false;
+  private bool _waitingForPlay = true;
+  
+  public event System.Action OnPlayButtonClicked;
+  public event System.Action OnStopWaves;
+  
+  public Button playButton;
 
   private void Start()
   {
@@ -40,6 +48,47 @@ public class GameM : MonoBehaviour
     _waveText.gameObject.SetActive(false);
 
     UpdateGold();
+    
+    playButton.onClick.AddListener(StartNextWave);
+  }
+  
+  public void StartNextWave()
+  {
+    if (!_isWaveInProgress && !_waitingForPlay && _waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
+    {
+      StartCoroutine(StartWave());
+    }
+  }
+  
+  IEnumerator StartWave()
+  {
+    _isWaveInProgress = true;
+
+    if (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
+    {
+      for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
+      {
+        Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
+        yield return new WaitForSeconds(_spawnInterval);
+      }
+      _waveIndex++;
+    }
+
+    _isWaveInProgress = false;
+
+    if (_waveIndex >= _wavesCount)
+    {
+      EndGame();
+    }
+    else
+    {
+      _waitingForPlay = true;
+    }
+  }
+
+  public void PlayerPressedPlay()
+  {
+    _waitingForPlay = false;
   }
 
   public void Update()
