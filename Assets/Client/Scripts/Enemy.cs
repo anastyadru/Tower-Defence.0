@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     
     private bool canMove = false;
     
+    private GameM gameManager;
+    
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();

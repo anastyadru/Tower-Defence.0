@@ -35,6 +35,9 @@ public class GameM : MonoBehaviour
   private bool _isWaveInProgress = false;
   private bool _waitingForPlay = true;
   
+  public event System.Action OnPlayButtonClicked;
+  public event System.Action OnStopWaves;
+  
   public Button playButton;
 
   private void Start()
