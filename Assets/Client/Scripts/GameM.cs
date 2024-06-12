@@ -18,27 +18,19 @@ public class GameM : MonoBehaviour
   [SerializeField] private Text _waveText;
   [SerializeField] private Text _waveTimeText;
 
-  [SerializeField] private int _wavesCount = 16;
-  [SerializeField] private float _nextWaveTime = 12;
+  [SerializeField] private int _wavesCount = 15;
+  [SerializeField] private float _nextWaveTime = 15;
   [SerializeField] private float _spawnInterval = 1;
   [SerializeField] private float _startTime = 5;
     
   public int _gold = 150;
   public int _playerCost = 50;
 
-  private int[] _enemyCounts = new int[] { 4, 5, 6, 5, 2, 7, 8, 9, 3, 6, 9, 9, 9, 10, 8, 9 };
+  private int[] _enemyCounts = new int[] { 4, 5, 6, 3, 2, 7, 8, 4, 3, 6, 9, 9, 1, 10, 8 };
   private int _waveIndex;
   private bool _endGame;
 
   public static GameM instance;
-  
-  private bool _isWaveInProgress = false;
-  private bool _waitingForPlay = true;
-  
-  public event System.Action OnPlayButtonClicked;
-  public event System.Action OnStopWaves;
-  
-  public Button playButton;
 
   private void Start()
   {
@@ -48,47 +40,6 @@ public class GameM : MonoBehaviour
     _waveText.gameObject.SetActive(false);
 
     UpdateGold();
-    
-    playButton.onClick.AddListener(StartNextWave);
-  }
-  
-  public void StartNextWave()
-  {
-    if (!_isWaveInProgress && !_waitingForPlay && _waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
-    {
-      StartCoroutine(StartWave());
-    }
-  }
-  
-  IEnumerator StartWave()
-  {
-    _isWaveInProgress = true;
-
-    if (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
-    {
-      for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
-      {
-        Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
-        yield return new WaitForSeconds(_spawnInterval);
-      }
-      _waveIndex++;
-    }
-
-    _isWaveInProgress = false;
-
-    if (_waveIndex >= _wavesCount)
-    {
-      EndGame();
-    }
-    else
-    {
-      _waitingForPlay = true;
-    }
-  }
-
-  public void PlayerPressedPlay()
-  {
-    _waitingForPlay = false;
   }
 
   public void Update()
@@ -113,6 +64,7 @@ public class GameM : MonoBehaviour
     {
       StartCoroutine(Spawn());
       _startTime = _nextWaveTime;
+      _waveIndex++;
     }
 
     _startTime -= Time.deltaTime;
@@ -147,7 +99,7 @@ public class GameM : MonoBehaviour
 
   IEnumerator Spawn()
   {
-    if (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
+    if (_waveIndex < _wavesCount)
     {
       for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
       {
@@ -166,10 +118,5 @@ public class GameM : MonoBehaviour
   public void EndGame2()
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-  }
-  
-  public int GetCurrentWave()
-  {
-    return _waveIndex;
   }
 }
