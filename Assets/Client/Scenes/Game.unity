@@ -917,9 +917,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1558914591}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Resume
+      - m_Target: {fileID: 2139045042}
+        m_TargetAssemblyTypeName: GameM, Assembly-CSharp
+        m_MethodName: StartNextWave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11448,6 +11448,7 @@ MonoBehaviour:
   _startTime: 5
   _gold: 150
   _playerCost: 50
+  playButton: {fileID: 0}
 --- !u!4 &2139045043
 Transform:
   m_ObjectHideFlags: 0
