@@ -90,7 +90,10 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameM.instance.OnPlayButtonClicked -= StartMoving;
-        GameM.instance.OnStopWaves -= StopMoving;
+        if (gameManager != null)
+        {
+            gameManager.OnPlayButtonClicked -= StartMoving;
+            gameManager.OnStopWaves -= StopMoving;
+        }
     }
 }
