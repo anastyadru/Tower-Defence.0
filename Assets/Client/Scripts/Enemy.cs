@@ -55,8 +55,8 @@ public class Enemy : MonoBehaviour
         _health -= damage;
         if (_health <= 0)
         {
-            GameM.instance._gold += _killReward;
-            GameM.instance.UpdateGold();
+            gameManager._gold += _killReward;
+            gameManager.UpdateGold();
             StartCoroutine(DestroyEnemy());
         }
         
@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
     {
         if(other.CompareTag("EndCube"))
         {
-            GameM.instance.TakeDamage(_health);
+            gameManager.TakeDamage(_health);
             Destroy(gameObject);
         }
     }
