@@ -114,12 +114,15 @@ public class GameM : MonoBehaviour
   
   public void StartNextWaveManually()
   {
-    if (!_waveInProgress && _waveIndex < _wavesCount)
+    if (_waveIndex < _wavesCount)
     {
-      StartCoroutine(Spawn());
-      _waveInProgress = true;
-      _waveTimeText.gameObject.SetActive(true);
-      _waveTimeText.text = string.Format("{0:00.00}", _nextWaveTime);
+      if (!_waveInProgress)
+      {
+        StartCoroutine(Spawn());
+        _waveInProgress = true;
+        _waveTimeText.gameObject.SetActive(true);
+        _waveTimeText.text = string.Format("{0:00.00}", _nextWaveTime);
+      }
     }
   }
 
