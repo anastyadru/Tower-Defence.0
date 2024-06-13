@@ -31,6 +31,8 @@ public class GameM : MonoBehaviour
   private bool _endGame;
 
   public static GameM instance;
+  
+  private bool _waveInProgress = false;
 
   private void Start()
   {
@@ -38,6 +40,7 @@ public class GameM : MonoBehaviour
         
     _healthText.text = "Health: " + _health;
     _waveText.gameObject.SetActive(false);
+    _waveTimeText.gameObject.SetActive(false);
 
     UpdateGold();
   }
