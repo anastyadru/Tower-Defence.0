@@ -125,14 +125,14 @@ public class GameM : MonoBehaviour
 
   public void EndCurrentWave()
   {
-    StopAllCoroutines(); // Остановить спаун текущей волны
-    _waveIndex++; // Переход к следующей волне
+    StopAllCoroutines();
+    _waveIndex++;
     _waveInProgress = false;
     _waveTimeText.gameObject.SetActive(false);
     if (_waveIndex >= _wavesCount)
     {
       Debug.Log("All waves completed!");
-      EndGame()
+      EndGame();
     }
   }
   
