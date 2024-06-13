@@ -23,8 +23,8 @@ public class GameM : MonoBehaviour
   [SerializeField] private float _spawnInterval = 1;
   [SerializeField] private float _startTime = 5;
     
-  public int _gold = 150;
-  public int _playerCost = 50;
+  private int _gold = 150;
+  private int _playerCost = 50;
 
   private int[] _enemyCounts = new int[] { 4, 5, 6, 5, 2, 7, 8, 9, 3, 6, 9, 9, 9, 10, 8, 9 };
   private int _waveIndex;
