@@ -87,7 +87,7 @@ public class GameM : MonoBehaviour
 
   public void TakeDamage(int damage)
   {
-    _health -= 10;
+    _health -= damage;
     if (_health <= 0)
     {
       _endGame = true;
@@ -132,7 +132,7 @@ public class GameM : MonoBehaviour
     if (_waveIndex >= _wavesCount)
     {
       Debug.Log("All waves completed!");
-      // Добавьте здесь любую логику, которая должна произойти после завершения всех волн
+      EndGame()
     }
   }
   
