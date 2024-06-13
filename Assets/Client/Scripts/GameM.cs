@@ -60,6 +60,15 @@ public class GameM : MonoBehaviour
     }
   }
   
+  public void PlayerPressedPlay()
+  {
+    if (_waitingForPlay)
+    {
+      _waitingForPlay = false;
+      StartCoroutine(StartWave());
+    }
+  }
+  
   IEnumerator StartWave()
   {
     _isWaveInProgress = true;
@@ -84,11 +93,6 @@ public class GameM : MonoBehaviour
     {
       _waitingForPlay = true;
     }
-  }
-
-  public void PlayerPressedPlay()
-  {
-    _waitingForPlay = false;
   }
 
   public void Update()
