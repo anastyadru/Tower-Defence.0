@@ -112,6 +112,30 @@ public class GameM : MonoBehaviour
     }
   }
   
+  public void StartNextWaveManually()
+  {
+    if (!_waveInProgress && _waveIndex < _wavesCount)
+    {
+      StartCoroutine(Spawn());
+      _waveInProgress = true;
+      _waveTimeText.gameObject.SetActive(true);
+      _waveTimeText.text = string.Format("{0:00.00}", _nextWaveTime);
+    }
+  }
+
+  public void EndCurrentWave()
+  {
+    StopAllCoroutines(); // Остановить спаун текущей волны
+    _waveIndex++; // Переход к следующей волне
+    _waveInProgress = false;
+    _waveTimeText.gameObject.SetActive(false);
+    if (_waveIndex >= _wavesCount)
+    {
+      Debug.Log("All waves completed!");
+      // Добавьте здесь любую логику, которая должна произойти после завершения всех волн
+    }
+  }
+  
   public void EndGame()
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
