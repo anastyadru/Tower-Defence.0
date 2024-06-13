@@ -919,7 +919,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2139045042}
         m_TargetAssemblyTypeName: GameM, Assembly-CSharp
-        m_MethodName: StartNextWave
+        m_MethodName: StartNextWaveManually
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11448,7 +11448,6 @@ MonoBehaviour:
   _startTime: 5
   _gold: 150
   _playerCost: 50
-  playButton: {fileID: 166948924}
 --- !u!4 &2139045043
 Transform:
   m_ObjectHideFlags: 0
