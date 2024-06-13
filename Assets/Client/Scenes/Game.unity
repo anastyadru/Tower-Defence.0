@@ -11448,7 +11448,7 @@ MonoBehaviour:
   _startTime: 5
   _gold: 150
   _playerCost: 50
-  playButton: {fileID: 0}
+  playButton: {fileID: 166948924}
 --- !u!4 &2139045043
 Transform:
   m_ObjectHideFlags: 0
