@@ -23,7 +23,7 @@ public class GameM : MonoBehaviour
   public int _gold = 150;
   public int _playerCost = 50;
 
-  private int[] _enemyCounts = new int[] { 4, 5, 6, 5, 2, 7, 8, 9, 3, 6, 9, 9, 9, 10, 8, 9 };
+  private int[] _enemyCounts = new int[] { 6, 10, 9, 7, 15, 20, 6, 1, 25, 30, 13, 11, 22, 9, 30, 42 };
   private int _waveIndex;
   private bool _endGame;
 
