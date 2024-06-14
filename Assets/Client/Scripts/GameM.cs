@@ -16,7 +16,6 @@ public class GameM : MonoBehaviour
   [SerializeField] private Enemy _enemy;
   [SerializeField] private GameObject _startCube;
   [SerializeField] private Text _waveText;
-  [SerializeField] private Text _waveTimeText;
 
   [SerializeField] private int _wavesCount = 16;
   [SerializeField] private float _nextWaveTime = 12;
@@ -41,7 +40,6 @@ public class GameM : MonoBehaviour
         
     _healthText.text = "Health: " + _health;
     _waveText.gameObject.SetActive(false);
-    _waveTimeText.gameObject.SetActive(false);
 
     UpdateGold();
   }
@@ -60,7 +58,6 @@ public class GameM : MonoBehaviour
 
     if(_waveIndex >= _wavesCount)
     {
-      _waveTimeText.gameObject.SetActive(false);
       return;
     }
 
