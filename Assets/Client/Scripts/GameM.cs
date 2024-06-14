@@ -115,12 +115,13 @@ public class GameM : MonoBehaviour
   
   public void StartNextWaveManually()
   {
-    if (!_waveInProgress && _waveIndex < _wavesCount)
+    if (!_waveInProgress && _currentEnemyCountIndex < _enemyCounts.Length)
     {
-      StartCoroutine(Spawn());
+      StartCoroutine(Spawn(_enemyCounts[_currentEnemyCountIndex])); // Запускаем новую волну с количеством врагов из массива
       _waveInProgress = true;
       _waveTimeText.gameObject.SetActive(true);
       _waveTimeText.text = string.Format("{0:00.00}", _nextWaveTime);
+      _currentEnemyCountIndex++; // Увеличиваем индекс для следующей волны
     }
   }
 
