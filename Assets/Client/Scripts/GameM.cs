@@ -100,17 +100,18 @@ public class GameM : MonoBehaviour
     _healthText.text = "Health: " + _health;
   }
 
-  IEnumerator Spawn()
+  IEnumerator Spawn(int enemyCount)
   {
-    if (_waveIndex < _wavesCount && _waveIndex < _enemyCounts.Length)
+    if (_waveIndex < _wavesCount)
     {
-      for (int i = 0; i < _enemyCounts[_waveIndex]; i++)
+      for (int i = 0; i < enemyCount; i++)
       {
         Instantiate(_enemy, _startCube.transform.position, _enemy.transform.rotation);
         yield return new WaitForSeconds(_spawnInterval);
       }
       _waveIndex++;
     }
+    _waveInProgress = false; // Устанавливаем флаг окончания волны после завершения спауна
   }
   
   public void StartNextWaveManually()
