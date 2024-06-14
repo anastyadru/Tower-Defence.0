@@ -107,8 +107,6 @@ public class GameM : MonoBehaviour
     {
       StartCoroutine(Spawn(_enemyCounts[_currentEnemyCountIndex]));
       _waveInProgress = true;
-      _waveTimeText.gameObject.SetActive(true);
-      _waveTimeText.text = string.Format("{0:00.00}", _nextWaveTime);
       _currentEnemyCountIndex++;
     }
   }
