@@ -66,7 +66,7 @@ public class GameM : MonoBehaviour
 
     if(_startTime <= 0)
     {
-      StartCoroutine(Spawn());
+      StartCoroutine(Spawn(_enemyCounts[_currentEnemyCountIndex]));
       _startTime = _nextWaveTime;
     }
 
