@@ -1425,7 +1425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthText: {fileID: 2892157149668795841}
-  _killReward: 5
+  _killReward: 3
   agent: {fileID: 7537156157585502403}
   EndCube: {fileID: 0}
 --- !u!1 &8053443105485094804
