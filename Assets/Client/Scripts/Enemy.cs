@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private TextMesh _healthText;
     
-    [SerializeField] private int _killReward = 5;
+    [SerializeField] private int _killReward = 3;
     
     private int _health;
 
