@@ -111,18 +111,18 @@ public class GameM : MonoBehaviour
       }
       _waveIndex++;
     }
-    _waveInProgress = false; // Устанавливаем флаг окончания волны после завершения спауна
+    _waveInProgress = false;
   }
   
   public void StartNextWaveManually()
   {
     if (!_waveInProgress && _currentEnemyCountIndex < _enemyCounts.Length)
     {
-      StartCoroutine(Spawn(_enemyCounts[_currentEnemyCountIndex])); // Запускаем новую волну с количеством врагов из массива
+      StartCoroutine(Spawn(_enemyCounts[_currentEnemyCountIndex]));
       _waveInProgress = true;
       _waveTimeText.gameObject.SetActive(true);
       _waveTimeText.text = string.Format("{0:00.00}", _nextWaveTime);
-      _currentEnemyCountIndex++; // Увеличиваем индекс для следующей волны
+      _currentEnemyCountIndex++;
     }
   }
 
