@@ -19,7 +19,7 @@ public class GameM : MonoBehaviour
   [SerializeField] private Text _waveTimeText;
 
   [SerializeField] private int _wavesCount = 16;
-  [SerializeField] private float _nextWaveTime = 12;
+  // [SerializeField] private float _nextWaveTime = 12;
   [SerializeField] private float _spawnInterval = 1;
   [SerializeField] private float _startTime = 5;
     
@@ -64,15 +64,15 @@ public class GameM : MonoBehaviour
       return;
     }
 
-    if(_startTime <= 0)
-    {
-      StartCoroutine(Spawn(_enemyCounts[_currentEnemyCountIndex]));
-      _startTime = _nextWaveTime;
-    }
+    // if(_startTime <= 0)
+    // {
+      // StartCoroutine(Spawn(_enemyCounts[_currentEnemyCountIndex]));
+      // _startTime = _nextWaveTime;
+    // }
 
-    _startTime -= Time.deltaTime;
-    _startTime = Mathf.Clamp(_startTime, 0, Mathf.Infinity);
-    _waveTimeText.text = string.Format("{0:00.00}", _startTime);
+    // _startTime -= Time.deltaTime;
+    // _startTime = Mathf.Clamp(_startTime, 0, Mathf.Infinity);
+    // _waveTimeText.text = string.Format("{0:00.00}", _startTime);
     
     if(_waveIndex >= 0)
     {
