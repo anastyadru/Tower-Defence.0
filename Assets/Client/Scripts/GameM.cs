@@ -33,6 +33,7 @@ public class GameM : MonoBehaviour
   public static GameM instance;
   
   private bool _waveInProgress = false;
+  private int _currentEnemyCountIndex = 0;
 
   private void Start()
   {
