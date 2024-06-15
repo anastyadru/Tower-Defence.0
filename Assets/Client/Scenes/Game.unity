@@ -11363,8 +11363,8 @@ MonoBehaviour:
   _waveText: {fileID: 1134971362}
   _wavesCount: 16
   _spawnInterval: 1
-  _gold: 150
-  _playerCost: 50
+  _gold: 100
+  _playerCost: 70
 --- !u!4 &2139045043
 Transform:
   m_ObjectHideFlags: 0
