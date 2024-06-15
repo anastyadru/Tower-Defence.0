@@ -27,7 +27,13 @@ public class PlayerManager : MonoBehaviour
         
         if (Input.GetMouseButtonDown(1)) // Добавлено условие для правой кнопки мыши
         {
-            
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                
+            }
         }
     }
 
