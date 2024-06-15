@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider != null && hit.collider.CompareTag("Player1"))
+                if (hit.collider != null && hit.collider.CompareTag("Player"))
                 {
                     RemovePlayer(hit.collider.gameObject);
                 }
