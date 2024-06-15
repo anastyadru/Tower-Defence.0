@@ -58,4 +58,9 @@ public class PlayerManager : MonoBehaviour
             Debug.Log("Pressed" + playerBtnPressed.gameObject);
         }
     }
+    
+    public void RemovePlayer(GameObject playerToRemove)
+    {
+        Destroy(playerToRemove);
+    }
 }
