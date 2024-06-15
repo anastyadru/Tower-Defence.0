@@ -20,8 +20,8 @@ public class GameM : MonoBehaviour
   [SerializeField] private int _wavesCount = 16;
   [SerializeField] private float _spawnInterval = 1;
 
-  public int _gold = 150;
-  public int _playerCost = 50;
+  public int _gold = 100;
+  public int _playerCost = 70;
 
   private int[] _enemyCounts = new int[] { 10, 30, 29, 35, 40, 20, 50, 1, 60, 44, 70, 60, 33, 45, 35, 42 };
   private int _waveIndex;
