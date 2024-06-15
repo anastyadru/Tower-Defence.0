@@ -25,16 +25,16 @@ public class PlayerManager : MonoBehaviour
             }
         }
         
-        if (Input.GetMouseButtonDown(1)) // Добавлено условие для правой кнопки мыши
+        if (Input.GetMouseButtonDown(1))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider != null && hit.collider.CompareTag("Player")) // Проверяем тег "Player" для удаления игрока
+                if (hit.collider != null && hit.collider.CompareTag("Player"))
                 {
-                    RemovePlayer(hit.collider.gameObject); // Вызываем метод для удаления игрока
+                    RemovePlayer(hit.collider.gameObject);
                 }
             }
         }
