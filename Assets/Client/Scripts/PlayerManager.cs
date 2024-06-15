@@ -32,7 +32,10 @@ public class PlayerManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                
+                if (hit.collider != null && hit.collider.CompareTag("Player")) // Проверяем тег "Player" для удаления игрока
+                {
+                    RemovePlayer(hit.collider.gameObject); // Вызываем метод для удаления игрока
+                }
             }
         }
     }
