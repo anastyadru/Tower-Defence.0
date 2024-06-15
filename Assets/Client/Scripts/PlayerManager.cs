@@ -24,6 +24,11 @@ public class PlayerManager : MonoBehaviour
                 }
             }
         }
+        
+        if (Input.GetMouseButtonDown(1)) // Добавлено условие для правой кнопки мыши
+        {
+            
+        }
     }
 
     public void PlacePlayer(Vector3 position)
