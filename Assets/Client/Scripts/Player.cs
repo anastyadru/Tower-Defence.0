@@ -94,4 +94,9 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _range);
     }
+    
+    private void RemovePlayer()
+    {
+        Destroy(gameObject);
+    }
 }
