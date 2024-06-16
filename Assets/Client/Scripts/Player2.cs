@@ -70,9 +70,13 @@ public class Player2 : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider != null && hit.collider.CompareTag("Player"))
+                if (hit.collider != null)
                 {
-                    RemovePlayer();
+                    Player player = hit.collider.GetComponent<Player>();
+                    if (player != null)
+                    {
+                        RemovePlayer(player.gameObject);
+                    }
                 }
             }
         }
