@@ -12,7 +12,6 @@ public class PlayerBtn : MonoBehaviour
     {
         get
         {
-
             return playerObject;
         }
         
