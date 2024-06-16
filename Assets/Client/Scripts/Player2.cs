@@ -105,8 +105,8 @@ public class Player2 : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _range);
     }
     
-    private void RemovePlayer()
+    private void RemovePlayer(GameObject playerObject)
     {
-        Destroy(gameObject);
+        Destroy(playerObject);
     }
 }
