@@ -7,6 +7,14 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    
+    private Player _player;
+
+    [Inject]
+    public void Construct(Player player)
+    {
+        _player = player;
+    }
     private PlayerBtn playerBtnPressed;
 
     public void Update()
