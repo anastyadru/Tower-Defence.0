@@ -141,5 +141,8 @@ public class GameM : MonoBehaviour
     // TotalMoney += amount;
   // }
   
-  
+  // public void subtractMoney(int amount)
+  // {
+  // TotalMoney -= amount;
+  // }
 }
