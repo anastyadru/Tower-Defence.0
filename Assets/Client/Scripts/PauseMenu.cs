@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Resume();
             }
-            else
+            else if (!pauseGameMenu.activeSelf)
             {
                 Pause();
             }
