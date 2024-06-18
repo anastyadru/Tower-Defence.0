@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using Zenject;
 
 public class PlayerManager : MonoBehaviour
 {
