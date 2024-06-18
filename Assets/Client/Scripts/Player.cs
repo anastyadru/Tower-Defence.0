@@ -83,11 +83,11 @@ public class Player : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             GameObject bullet = Instantiate(_bullet, _firePoints[i % _firePoints.Length].position, _firePoints[i % _firePoints.Length].rotation);
-            Bullet bulletComponent = bullet.GetComponent<Bullet>();
+            Bullet bullet1 = bullet.GetComponent<Bullet>();
 
-            if (bulletComponent != null && _target != null)
+            if (bullet1 != null)
             {
-                bulletComponent.Find(_target);
+                bullet1.Find(_target);
             }
 
             yield return new WaitForSeconds(0.1f);
