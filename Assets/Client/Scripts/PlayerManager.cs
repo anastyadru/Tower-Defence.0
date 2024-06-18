@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     {
         _player = player;
     }
+    
     private PlayerBtn playerBtnPressed;
 
     public void Update()

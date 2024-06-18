@@ -6,6 +6,14 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
+    private PlayerManager _playerManager;
+
+    [Inject]
+    public void Construct(PlayerManager playerManager)
+    {
+        _playerManager = playerManager;
+    }
+    
     [SerializeField] private Transform _head;
     [SerializeField] private Transform[] _firePoints;
     [SerializeField] private GameObject _bullet;
