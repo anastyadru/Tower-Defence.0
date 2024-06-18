@@ -135,4 +135,11 @@ public class GameM : MonoBehaviour
   {
     return _waveIndex;
   }
+
+  // public void addMoney(int amount)
+  // {
+    // TotalMoney += amount;
+  // }
+  
+  
 }

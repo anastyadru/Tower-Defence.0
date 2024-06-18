@@ -8,7 +8,6 @@ using Zenject;
 
 public class PlayerManager : MonoBehaviour
 {
-    
     private Player _player;
 
     [Inject]
