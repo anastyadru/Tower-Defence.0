@@ -150,6 +150,5 @@ public class GameM : MonoBehaviour
     int returnAmount = (int)(_playerCost * 0.75f);
     _gold += returnAmount;
     UpdateGold();
-    // Дополнительная логика для удаления игрока
   }
 }
