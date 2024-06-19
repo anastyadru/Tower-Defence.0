@@ -124,5 +124,8 @@ public class Player2 : MonoBehaviour
         // _playerManager.BuyPlayer();
     // }
     
-    
+    // public void SellThisPlayer()
+    // {
+        // _playerManager.SellPlayer(gameObject);
+    // }
 }
