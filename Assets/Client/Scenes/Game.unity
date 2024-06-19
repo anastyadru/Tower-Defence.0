@@ -11531,6 +11531,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6528848204155921863}
+    - target: {fileID: 7091574941829393725, guid: 43aea86b405674d4c9d8de8925600286, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8353274025366706323, guid: 9bccea5c509db4a46a2d04172173c423, type: 3}
+    - target: {fileID: 7091574941829393725, guid: 43aea86b405674d4c9d8de8925600286, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7091574941829393726, guid: 43aea86b405674d4c9d8de8925600286, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
