@@ -119,10 +119,10 @@ public class Player2 : MonoBehaviour
         Destroy(playerObject);
     }
     
-    public void BuyThisPlayer()
-    {
-        _playerManager.BuyPlayer();
-    }
+    // public void BuyThisPlayer()
+    // {
+        // _playerManager.BuyPlayer();
+    // }
     
     
 }
