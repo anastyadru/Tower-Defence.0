@@ -71,5 +71,22 @@ public class PlayerManager : MonoBehaviour
     public void RemovePlayer(GameObject playerToRemove)
     {
         Destroy(playerToRemove);
+        // public void SellPlayer(int sellValue);
     }
+    
+    // public void BuyPlayer()
+    // {
+        // if (_gold >= _playerCost)
+        // {
+            // _gold -= _playerCost;
+            // UpdateGold();
+        // }
+    // }
+  
+    // public void SellPlayer(int sellValue)
+    // {
+        // int returnAmount = (int)(_playerCost * 0.75f);
+        // _gold += returnAmount;
+        // UpdateGold();
+    // }
 }
