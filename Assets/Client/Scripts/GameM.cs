@@ -136,13 +136,13 @@ public class GameM : MonoBehaviour
     return _waveIndex;
   }
 
-  // public void addMoney(int amount)
+  // public void addGold(int amount)
   // {
-    // TotalMoney += amount;
+    // _gold += amount;
   // }
   
-  // public void subtractMoney(int amount)
+  // public void subtractGold(int amount)
   // {
-  // TotalMoney -= amount;
+  // _gold -= amount;
   // }
 }
