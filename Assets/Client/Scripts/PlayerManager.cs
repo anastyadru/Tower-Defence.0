@@ -17,6 +17,7 @@ public class PlayerManager : MonoBehaviour
     }
     
     private PlayerBtn playerBtnPressed;
+    public int _gold = 100;
 
     public void Update()
     {
@@ -71,7 +72,6 @@ public class PlayerManager : MonoBehaviour
     public void RemovePlayer(GameObject playerToRemove)
     {
         Destroy(playerToRemove);
-        // public void SellPlayer(int sellValue);
     }
     
     // public void BuyPlayer()
