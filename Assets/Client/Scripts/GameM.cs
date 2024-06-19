@@ -145,8 +145,11 @@ public class GameM : MonoBehaviour
     }
   }
   
-  // public void subtractGold(int amount)
-  // {
-    // _gold -= amount;
-  // }
+  public void SellPlayer(int sellValue)
+  {
+    int returnAmount = (int)(_playerCost * 0.75f);
+    _gold += returnAmount;
+    UpdateGold();
+    // Дополнительная логика для удаления игрока
+  }
 }
