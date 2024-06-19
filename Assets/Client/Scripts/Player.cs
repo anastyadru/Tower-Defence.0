@@ -103,6 +103,7 @@ public class Player : MonoBehaviour
     private void RemovePlayer(GameObject playerObject)
     {
         Destroy(playerObject);
+        // public void SellPlayer();
     }
     
     // public void BuyPlayer()
