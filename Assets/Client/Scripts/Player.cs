@@ -7,6 +7,14 @@ using Zenject;
 
 public class Player : MonoBehaviour
 {
+    private PlayerManager _playerManager;
+
+    [Inject]
+    public void Construct(PlayerManager playerManager)
+    {
+        _playerManager = playerManager;
+    }
+    
     [SerializeField] private Transform _head;
     [SerializeField] private Transform[] _firePoints;
     [SerializeField] private GameObject _bullet;
