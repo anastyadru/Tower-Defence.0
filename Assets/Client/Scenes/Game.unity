@@ -11636,6 +11636,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6528848204155921863}
+    - target: {fileID: 3629323747109075372, guid: e462d1cbbade3424e8c115d68c2840e5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectedPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629323747109075372, guid: e462d1cbbade3424e8c115d68c2840e5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 5011313312658910019, guid: 63d4fce8e667feb4e97ff4d720d2d88b, type: 3}
+    - target: {fileID: 3629323747109075372, guid: e462d1cbbade3424e8c115d68c2840e5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3629323747109075373, guid: e462d1cbbade3424e8c115d68c2840e5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
