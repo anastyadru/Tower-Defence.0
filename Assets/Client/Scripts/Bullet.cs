@@ -9,7 +9,14 @@ public class Bullet : MonoBehaviour
     [SerializeField] private int _damage = 1;
     [SerializeField] private float _speed = 50;
     
+    private ObjectPool bulletPool;
+    
     private Transform _target;
+    
+    private void Awake()
+    {
+        bulletPool = FindObjectOfType<ObjectPool>();
+    }
 
     public void Find(Transform target)
     {
