@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPoolable
 {
+    [Inject] private ObjectPool _bulletPool;
     [SerializeField] private int _damage = 1;
     [SerializeField] private float _speed = 50;
     
