@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private int _damage = 1;
     [SerializeField] private float _speed = 50;
@@ -37,14 +37,25 @@ public class Bullet : MonoBehaviour
                 {
                     enemy.TakeDamage(_damage);
                 }
-                Destroy(gameObject);
+                OnHit();
             }
 
             transform.Translate(direction.normalized * distance, Space.World);
         }
         else
         {
-            Destroy(gameObject);
+            OnHit();
         }
+    }
+    
+    public void OnHit()
+    {
+        OnRelease();
+        bulletPool.Release(this, bulletPool.bulletPoolDictionary);
+    }
+
+    public void OnRelease()
+    {
+        gameObject.SetActive(false);
     }
 }
