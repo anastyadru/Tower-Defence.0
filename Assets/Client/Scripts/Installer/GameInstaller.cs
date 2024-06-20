@@ -8,5 +8,6 @@ public class GameInstaller : MonoInstaller
         Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
         Container.Bind<PlayerManager>().FromComponentInHierarchy().AsSingle();
         Container.Bind<Player2>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<GameM>().FromComponentInHierarchy().AsSingle();
     }
 }

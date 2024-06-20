@@ -5,9 +5,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 public class GameM : MonoBehaviour
-{ 
+{
+  
+  
   [SerializeField] private Text _healthText;
   [SerializeField] private int _health = 100;
 

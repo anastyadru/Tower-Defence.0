@@ -1,11 +1,12 @@
-
+using UnityEngine;
 using Zenject;
 
 public class EnemyInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        Container.Bind<UnityEngine.AI.NavMeshAgent>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<Enemy>().AsSingle();
+        Container.Bind<Enemy>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<NavMeshAgent>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<ObjectPool>().FromComponentInHierarchy().AsSingle();
     }
 }
