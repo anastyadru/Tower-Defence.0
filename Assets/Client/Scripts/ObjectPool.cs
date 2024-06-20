@@ -13,9 +13,7 @@ public class ObjectPool : MonoBehaviour
 
     public void Start()
     {
-        PrePool<BulletControllerPlayer>(bulletPrefabPlayer, 200, playerPoolDictionary);
-        PrePool<BulletControllerEnemy>(bulletPrefabEnemy, 200, enemyPoolDictionary);
-        PrePool<Enemy>(PrefabEnemy, 50, enemyPoolDictionary);
+        PrePool<Bullet>(bulletPrefab, 200, poolDictionary);
     }
 
     public void PrePool<T>(T prefab, int count, Dictionary<Type, Queue<IPoolable>> poolDict) where T : MonoBehaviour, IPoolable
@@ -35,12 +33,12 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public T Get<T>(Dictionary<Type, Queue<IPoolable>> poolDict) where T : MonoBehaviour, IPoolable
+    public T Get<T>() where T : MonoBehaviour, IPoolable
     {
         Type type = typeof(T);
-        if (poolDict.ContainsKey(type) && poolDict[type].Count > 0)
+        if (poolDictionary.ContainsKey(type) && poolDictionary[type].Count > 0)
         {
-            IPoolable obj = poolDict[type].Dequeue();
+            IPoolable obj = poolDictionary[type].Dequeue();
             return (T)obj;
         }
     
