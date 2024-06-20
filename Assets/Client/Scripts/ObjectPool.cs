@@ -45,33 +45,24 @@ public class ObjectPool : MonoBehaviour
         return null;
     }
 
-    public void Release<T>(T poolableObject, Dictionary<Type, Queue<IPoolable>> poolDict) where T : MonoBehaviour, IPoolable
+    public void Release<T>(T poolableObject) where T : MonoBehaviour, IPoolable
     {
         Type type = typeof(T);
-        if (poolDict.ContainsKey(type))
+        if (poolDictionary.ContainsKey(type))
         {
-            Queue<IPoolable> objectPool = poolDict[type];
+            Queue<IPoolable> objectPool = poolDictionary[type];
             objectPool.Enqueue(poolableObject);
             poolableObject.OnRelease();
         }
     }
-    public BulletControllerPlayer GetPlayerBullet()
+    
+    public Bullet GetBullet()
     {
-        return Get<BulletControllerPlayer>(playerPoolDictionary);
+        return Get<Bullet>();
     }
 
-    public void ReleasePlayerBullet(BulletControllerPlayer bullet)
+    public void ReleaseBullet(Bullet bullet)
     {
-        Release(bullet, playerPoolDictionary);
-    }
-
-    public BulletControllerEnemy GetEnemyBullet()
-    {
-        return Get<BulletControllerEnemy>(enemyPoolDictionary);
-    }
-
-    public void ReleaseEnemyBullet(BulletControllerEnemy bullet)
-    {
-        Release(bullet, enemyPoolDictionary);
+        Release(bullet);
     }
 }
