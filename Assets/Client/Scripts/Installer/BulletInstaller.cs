@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class BulletInstaller : MonoBehaviour
+public class BulletInstaller : MonoInstaller
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void InstallBindings()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Container.Bind<ObjectPool>().FromComponentInHierarchy().AsSingle();
+        Container.BindInterfacesAndSelfTo<Bullet>().AsSingle();
     }
 }
