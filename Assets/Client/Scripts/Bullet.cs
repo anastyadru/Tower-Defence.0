@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour, IPoolable
     public void OnHit()
     {
         OnRelease();
-        bulletPool.Release(this, bulletPool.bulletPoolDictionary);
+        bulletPool.Release(this);
     }
 
     public void OnRelease()
