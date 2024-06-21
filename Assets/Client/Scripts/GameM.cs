@@ -9,8 +9,6 @@ using Zenject;
 
 public class GameM : MonoBehaviour
 {
-  
-  
   [SerializeField] private Text _healthText;
   [SerializeField] private int _health = 100;
 
