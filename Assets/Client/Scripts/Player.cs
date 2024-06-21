@@ -113,11 +113,13 @@ public class Player : MonoBehaviour
         Destroy(playerObject);
     }
     
+    // [Inject]
     // public void BuyPlayer()
     // {
         // _playerManager.BuyPlayer();
     // }
     
+    // [Inject]
     // public void SellPlayer()
     // {
         // _playerManager.SellPlayer(gameObject);
