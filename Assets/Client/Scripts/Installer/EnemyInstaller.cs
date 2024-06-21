@@ -7,6 +7,5 @@ public class EnemyInstaller : MonoInstaller
     {
         Container.Bind<Enemy>().FromComponentInHierarchy().AsSingle();
         Container.Bind<UnityEngine.AI.NavMeshAgent>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<ObjectPool>().FromComponentInHierarchy().AsSingle();
     }
 }
