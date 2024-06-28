@@ -10,7 +10,13 @@ public class ObjectPool : MonoBehaviour
     public Bullet bulletPrefab;
     
     public Dictionary<Type, Queue<IPoolable>> poolDictionary = new Dictionary<Type, Queue<IPoolable>>();
-    public Dictionary<Type, Queue<IPoolable>> bulletPoolDictionary = new Dictionary<Type, Queue<IPoolable>>();
+    private DiContainer container;
+    
+    [Inject]
+    public void Construct(DiContainer container)
+    {
+        this.container = container;
+    }
 
     public void Start()
     {
