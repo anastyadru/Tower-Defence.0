@@ -19,11 +19,6 @@ public class Bullet : MonoBehaviour, IPoolable
     {
         this.bulletPool = bulletPool;
     }
-    
-    private void Awake()
-    {
-        bulletPool = FindObjectOfType<ObjectPool>();
-    }
 
     public void Find(Transform target)
     {
