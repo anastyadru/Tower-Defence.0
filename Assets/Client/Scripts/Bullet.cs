@@ -11,13 +11,12 @@ public class Bullet : MonoBehaviour, IPoolable
     [SerializeField] private float _speed = 50;
     
     private ObjectPool bulletPool;
-    
     private Transform _target;
     
     [Inject]
     public void Construct(ObjectPool bulletPool)
     {
-        this.bulletPool = bulletPool;
+        _bulletPool = bulletPool;
     }
 
     public void Find(Transform target)
