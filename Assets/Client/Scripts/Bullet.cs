@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour, IPoolable
     [SerializeField] private int _damage = 1;
     [SerializeField] private float _speed = 50;
     
-    private ObjectPool bulletPool;
+    private ObjectPool _bulletPool;
     private Transform _target;
     
     [Inject]
