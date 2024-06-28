@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        agent.SetDestination(EndCube.transform.position);
+        _agent.SetDestination(EndCube.transform.position);
     }
 
     public void TakeDamage(int damage)
