@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour, IPoolable
     public void OnHit()
     {
         OnRelease();
-        bulletPool.Release(this);
+        _bulletPool.ReleaseBullet(this);
     }
 
     public void OnRelease()
