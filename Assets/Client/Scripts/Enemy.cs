@@ -8,8 +8,8 @@ using Zenject;
 
 public class Enemy : MonoBehaviour
 {
-    [Inject] private NavMeshAgent _agent;
-    [Inject] private ObjectPool _bulletPool;
+    private NavMeshAgent _agent;
+    private ObjectPool _bulletPool;
     
     [SerializeField] private TextMesh _healthText;
     
