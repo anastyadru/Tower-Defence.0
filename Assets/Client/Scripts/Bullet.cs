@@ -1,3 +1,5 @@
+// Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,17 +7,17 @@ using Zenject;
 
 public class Bullet : MonoBehaviour, IPoolable
 {
-    private ObjectPool bulletPool;
-
+    [Inject] private ObjectPool _bulletPool;
     [SerializeField] private int _damage = 1;
     [SerializeField] private float _speed = 50;
-
+    
+    private ObjectPool bulletPool;
+    
     private Transform _target;
-
-    [Inject]
-    public void Construct(ObjectPool bulletPool)
+    
+    private void Awake()
     {
-        this.bulletPool = bulletPool;
+        bulletPool = FindObjectOfType<ObjectPool>();
     }
 
     public void Find(Transform target)
@@ -47,7 +49,7 @@ public class Bullet : MonoBehaviour, IPoolable
             OnHit();
         }
     }
-
+    
     public void OnHit()
     {
         OnRelease();
