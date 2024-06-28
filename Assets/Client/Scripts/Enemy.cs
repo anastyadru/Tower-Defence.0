@@ -1,5 +1,3 @@
-// Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +6,8 @@ using Zenject;
 
 public class Enemy : MonoBehaviour
 {
-    private NavMeshAgent _agent;
-    private ObjectPool _bulletPool;
+    [Inject] private NavMeshAgent _agent;
+    [Inject] private ObjectPool _bulletPool;
     
     [SerializeField] private TextMesh _healthText;
     
