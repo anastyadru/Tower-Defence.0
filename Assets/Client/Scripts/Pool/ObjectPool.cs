@@ -62,14 +62,4 @@ public class ObjectPool : MonoBehaviour
             poolableObject.OnRelease();
         }
     }
-    
-    public Bullet GetBullet()
-    {
-        return Get<Bullet>();
-    }
-
-    public void ReleaseBullet(Bullet bullet)
-    {
-        Release(bullet);
-    }
 }
