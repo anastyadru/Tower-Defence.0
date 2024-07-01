@@ -11,6 +11,13 @@ public class ObjectPool : MonoBehaviour
     public Bullet bulletPrefab;
     
     public Dictionary<Type, Queue<IPoolable>> poolDictionary = new Dictionary<Type, Queue<IPoolable>>();
+    private DiContainer container;
+    
+    [Inject]
+    public void Construct(DiContainer container)
+    {
+        this.container = container;
+    }
 
     public void Start()
     {
@@ -55,5 +62,15 @@ public class ObjectPool : MonoBehaviour
             objectPool.Enqueue(poolableObject);
             poolableObject.OnRelease();
         }
+    }
+    
+    public Bullet GetBullet()
+    {
+        return Get<Bullet>();
+    }
+
+    public void ReleaseBullet(Bullet bullet)
+    {
+        Release(bullet);
     }
 }
