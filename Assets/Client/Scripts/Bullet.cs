@@ -10,8 +10,15 @@ public class Bullet : MonoBehaviour, IPoolable
     [Inject] private ObjectPool _bulletPool;
     [SerializeField] private int _damage = 1;
     [SerializeField] private float _speed = 50;
-
+    
+    private ObjectPool bulletPool;
+    
     private Transform _target;
+    
+    private void Awake()
+    {
+        bulletPool = FindObjectOfType<ObjectPool>();
+    }
 
     public void Find(Transform target)
     {
@@ -46,7 +53,7 @@ public class Bullet : MonoBehaviour, IPoolable
     public void OnHit()
     {
         OnRelease();
-        _bulletPool.Release(this);
+        bulletPool.Release(this);
     }
 
     public void OnRelease()
