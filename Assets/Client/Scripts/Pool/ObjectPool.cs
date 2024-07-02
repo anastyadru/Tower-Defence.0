@@ -11,23 +11,11 @@ public class ObjectPool : MonoBehaviour
     public Bullet bulletPrefab;
     
     public Dictionary<Type, Queue<IPoolable>> poolDictionary = new Dictionary<Type, Queue<IPoolable>>();
-    private DiContainer container;
     
-    [Inject]
-    public void Construct(DiContainer container)
-    {
-        this.container = container;
-    }
-
-    public void Start()
-    {
-        PrePool<Bullet>(bulletPrefab, 200, poolDictionary);
-    }
-
-    public void PrePool<T>(T prefab, int count, Dictionary<Type, Queue<IPoolable>> poolDict) where T : MonoBehaviour, IPoolable
+    public void PrePool<T>(T prefab, int count) where T : MonoBehaviour, IPoolable
     {
         Type type = typeof(T);
-        if (!poolDict.ContainsKey(type))
+        if (!poolDictionary.ContainsKey(type))
         {
             Queue<IPoolable> objectPool = new Queue<IPoolable>();
             for (int i = 0; i < count; i++)
@@ -37,7 +25,7 @@ public class ObjectPool : MonoBehaviour
                 objectPool.Enqueue(obj);
             }
 
-            poolDict.Add(type, objectPool);
+            poolDictionary.Add(type, objectPool);
         }
     }
 
@@ -62,15 +50,5 @@ public class ObjectPool : MonoBehaviour
             objectPool.Enqueue(poolableObject);
             poolableObject.OnRelease();
         }
-    }
-    
-    public Bullet GetBullet()
-    {
-        return Get<Bullet>();
-    }
-
-    public void ReleaseBullet(Bullet bullet)
-    {
-        Release(bullet);
     }
 }
