@@ -7,8 +7,8 @@ public class GameInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        Container.Bind<ObjectPool>().AsSingle();
-        Container.Bind<Bullet>().AsTransient();
+        Container.Bind<ObjectPool>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<IPoolable>().To<Bullet>().AsTransient();
         Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
         Container.Bind<PlayerManager>().FromComponentInHierarchy().AsSingle();
         Container.Bind<Player2>().FromComponentInHierarchy().AsSingle();
