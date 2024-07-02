@@ -7,11 +7,10 @@ using Zenject;
 
 public class Bullet : MonoBehaviour, IPoolable
 {
-    [Inject] private ObjectPool _bulletPool;
+    private ObjectPool _bulletPool;
     [SerializeField] private int _damage = 1;
     [SerializeField] private float _speed = 50;
     
-    private ObjectPool bulletPool;
     private Transform _target;
     
     [Inject]
@@ -49,11 +48,14 @@ public class Bullet : MonoBehaviour, IPoolable
             OnHit();
         }
     }
-    
+
     public void OnHit()
     {
-        OnRelease();
-        _bulletPool.Release(this);
+        if (_bulletPool != null)
+        {
+            OnRelease();
+            _bulletPool.Release(this);
+        }
     }
 
     public void OnRelease()
