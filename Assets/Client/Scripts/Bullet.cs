@@ -56,6 +56,10 @@ public class Bullet : MonoBehaviour, IPoolable
             OnRelease();
             _bulletPool.Release(this);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnRelease()
