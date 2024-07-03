@@ -14,7 +14,7 @@ public class GameM : MonoBehaviour
 
   [SerializeField] private Text _goldText;
 
-  [Inject] private Enemy _enemy;
+  [SerializeField] private Enemy _enemy;
   [SerializeField] private GameObject _startCube;
   [SerializeField] private Text _waveText;
 
@@ -88,7 +88,7 @@ public class GameM : MonoBehaviour
 
   IEnumerator Spawn(int enemyCount)
   {
-    if (_waveIndex < _wavesCount && _enemy != null)
+    if (_waveIndex < _wavesCount)
     {
       for (int i = 0; i < enemyCount; i++)
       {
@@ -109,7 +109,7 @@ public class GameM : MonoBehaviour
       _currentEnemyCountIndex++;
     }
   }
-
+  
   public void EndCurrentWave()
   {
     StopAllCoroutines();
