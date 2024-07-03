@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     
     private void SetHealthByWave()
     {
-        int currentWave = GameM.instance.GetCurrentWave();
+        int currentWave = _gameM.GetCurrentWave();
         _health = currentWave;
     }
 
