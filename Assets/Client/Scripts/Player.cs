@@ -91,13 +91,13 @@ public class Player : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            Bullet bullet = _bulletFactory.Create();
+            Bullet bullet1 = _bulletFactory.Create();
             bullet.transform.position = _firePoints[i % _firePoints.Length].position;
             bullet.transform.rotation = _firePoints[i % _firePoints.Length].rotation;
 
-            if (bullet != null)
+            if (bullet1 != null)
             {
-                bullet.Find(_target);
+                bullet1.Find(_target);
             }
 
             yield return new WaitForSeconds(0.1f);
