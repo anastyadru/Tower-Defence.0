@@ -88,7 +88,7 @@ public class GameM : MonoBehaviour
 
   IEnumerator Spawn(int enemyCount)
   {
-    if (_waveIndex < _wavesCount)
+    if (_waveIndex < _wavesCount && _enemy != null)
     {
       for (int i = 0; i < enemyCount; i++)
       {
