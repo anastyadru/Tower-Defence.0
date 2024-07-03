@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
     {
         if(other.CompareTag("EndCube"))
         {
-            GameM.instance.TakeDamage(_health);
+            _gameM.TakeDamage(_health);
             Destroy(gameObject);
         }
     }
