@@ -16,9 +16,6 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject EndCube;
     
-    [Inject]
-    private GameM _gameM;
-    
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -30,7 +27,7 @@ public class Enemy : MonoBehaviour
     
     private void SetHealthByWave()
     {
-        int currentWave = _gameM.GetCurrentWave();
+        int currentWave = GameM.instance.GetCurrentWave();
         _health = currentWave;
     }
 
@@ -62,7 +59,7 @@ public class Enemy : MonoBehaviour
     {
         if(other.CompareTag("EndCube"))
         {
-            _gameM.TakeDamage(_health);
+            GameM.instance.TakeDamage(_health);
             Destroy(gameObject);
         }
     }
