@@ -16,6 +16,9 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject EndCube;
     
+    [Inject]
+    private GameM _gameM;
+    
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
