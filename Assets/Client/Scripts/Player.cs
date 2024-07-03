@@ -8,11 +8,13 @@ using Zenject;
 public class Player : MonoBehaviour
 {
     private PlayerManager _playerManager;
+    private Bullet.Factory _bulletFactory;
 
     [Inject]
-    public void Construct(PlayerManager playerManager)
+    public void Construct(PlayerManager playerManager, Bullet.Factory bulletFactory)
     {
         _playerManager = playerManager;
+        _bulletFactory = bulletFactory;
     }
     
     [SerializeField] private Transform _head;
