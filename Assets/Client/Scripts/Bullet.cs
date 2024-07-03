@@ -66,4 +66,9 @@ public class Bullet : MonoBehaviour, IPoolable
     {
         gameObject.SetActive(false);
     }
+
+    public class Factory : PlaceholderFactory<Bullet>
+    {
+        
+    }
 }

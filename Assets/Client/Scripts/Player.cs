@@ -95,9 +95,9 @@ public class Player : MonoBehaviour
             bullet.transform.position = _firePoints[i % _firePoints.Length].position;
             bullet.transform.rotation = _firePoints[i % _firePoints.Length].rotation;
 
-            if (bullet1 != null)
+            if (bullet != null)
             {
-                bullet1.Find(_target);
+                bullet.Find(_target);
             }
 
             yield return new WaitForSeconds(0.1f);
