@@ -14,7 +14,7 @@ public class GameM : MonoBehaviour
 
   [SerializeField] private Text _goldText;
 
-  [SerializeField] private Enemy _enemy;
+  [Inject] private Enemy _enemy;
   [SerializeField] private GameObject _startCube;
   [SerializeField] private Text _waveText;
 
