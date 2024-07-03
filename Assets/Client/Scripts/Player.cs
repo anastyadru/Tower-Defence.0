@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
     
     [SerializeField] private Transform _head;
     [SerializeField] private Transform[] _firePoints;
-    [SerializeField] private GameObject _bullet;
 
     [SerializeField] private float _range = 15;
     [SerializeField] private float _rotationSpeed = 3;
@@ -92,8 +91,9 @@ public class Player : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            GameObject bullet = Instantiate(_bullet, _firePoints[i % _firePoints.Length].position, _firePoints[i % _firePoints.Length].rotation);
-            Bullet bullet1 = bullet.GetComponent<Bullet>();
+            Bullet bullet = _bulletFactory.Create();
+            bullet.transform.position = _firePoints[i % _firePoints.Length].position;
+            bullet.transform.rotation = _firePoints[i % _firePoints.Length].rotation;
 
             if (bullet1 != null)
             {
