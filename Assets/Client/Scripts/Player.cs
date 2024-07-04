@@ -113,6 +113,11 @@ public class Player : MonoBehaviour, IPlayer
         Destroy(playerObject);
     }
     
+    public void SomePlayerMethod()
+    {
+        
+    }
+    
     // [Inject]
     // public void BuyPlayer()
     // {
