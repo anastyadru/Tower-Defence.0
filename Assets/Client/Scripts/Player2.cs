@@ -119,6 +119,11 @@ public class Player2 : MonoBehaviour, IPlayer
         Destroy(playerObject);
     }
     
+    public void SomePlayerMethod()
+    {
+        
+    }
+    
     // public void BuyPlayer()
     // {
         // _playerManager.BuyPlayer();
