@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour, IPoolable
     public void Construct(ObjectPool bulletPool, IPlayer player)
     {
         _bulletPool = bulletPool;
+        _player = player;
     }
 
     public void Find(Transform target)
