@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour, IPoolable
     [SerializeField] private float _speed = 50;
     
     private Transform _target;
+    private IPlayer _player;
     
     [Inject]
     public void Construct(ObjectPool bulletPool)
