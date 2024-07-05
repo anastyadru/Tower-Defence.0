@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour, IPoolable
     private IPlayer _player;
     
     [Inject]
-    public void Construct(ObjectPool bulletPool)
+    public void Construct(ObjectPool bulletPool, IPlayer player)
     {
         _bulletPool = bulletPool;
     }
