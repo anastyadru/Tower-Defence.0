@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class Player2 : MonoBehaviour
+public class Player2 : MonoBehaviour, IPlayer
 {
     private PlayerManager _playerManager;
 
