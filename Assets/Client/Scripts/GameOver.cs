@@ -9,15 +9,13 @@ using UnityEngine.Advertisements;
 
 public class GameOver : MonoBehaviour
 {
-
-    private void Start()
+    public void Start()
     {
         if (Advertisement.isSupported)
         {
             Advertisement.Initialize("5654184", false);
         }
     }
-    
 
     public void LoadMenu()
     {
