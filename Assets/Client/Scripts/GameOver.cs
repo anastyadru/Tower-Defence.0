@@ -8,6 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+
+    private void Start()
+    {
+        
+    }
+    
+
     public void LoadMenu()
     {
         SceneManager.LoadScene("StartMenu");
