@@ -42,8 +42,6 @@ public class GameM : MonoBehaviour
     _waveText.gameObject.SetActive(false);
 
     UpdateGold();
-
-    
   }
 
   public void Update()
@@ -70,7 +68,7 @@ public class GameM : MonoBehaviour
     }
   }
 
-    public void UpdateGold()
+  public void UpdateGold()
   {
     _goldText.text = _gold + "C";
   }
