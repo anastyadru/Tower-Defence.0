@@ -24,6 +24,10 @@ public class GameOver : MonoBehaviour
     
     public void LoadGame()
     {
+        if (Advertisement.IsReady())
+        {
+            
+        }
         SceneManager.LoadScene("Game");
     }
 }
