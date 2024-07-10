@@ -28,7 +28,6 @@ public class GameOver : MonoBehaviour
         {
             Advertisement.Show("video");
         }
-        
         SceneManager.LoadScene("Game");
     }
 }
