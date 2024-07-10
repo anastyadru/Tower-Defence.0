@@ -45,7 +45,7 @@ public class GameM : MonoBehaviour
 
     if (Advertisement.isSupported)
     {
-      Advertisement.Initialize("", false);
+      Advertisement.Initialize("5654184", false);
     }
   }
 
