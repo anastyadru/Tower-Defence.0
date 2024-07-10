@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Zenject;
+using UnityEngine.Advertisements;
 
 public class GameM : MonoBehaviour
 {
