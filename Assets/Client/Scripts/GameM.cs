@@ -43,10 +43,7 @@ public class GameM : MonoBehaviour
 
     UpdateGold();
 
-    if (Advertisement.isSupported)
-    {
-      Advertisement.Initialize("5654184", false);
-    }
+    
   }
 
   public void Update()

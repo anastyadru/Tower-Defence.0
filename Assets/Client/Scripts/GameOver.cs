@@ -11,7 +11,10 @@ public class GameOver : MonoBehaviour
 
     private void Start()
     {
-        
+        if (Advertisement.isSupported)
+        {
+            Advertisement.Initialize("5654184", false);
+        }
     }
     
 
