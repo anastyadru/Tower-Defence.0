@@ -42,6 +42,11 @@ public class GameM : MonoBehaviour
     _waveText.gameObject.SetActive(false);
 
     UpdateGold();
+
+    if (Advertisement.isSupported)
+    {
+      
+    }
   }
 
   public void Update()
