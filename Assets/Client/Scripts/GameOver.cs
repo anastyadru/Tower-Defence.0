@@ -26,7 +26,7 @@ public class GameOver : MonoBehaviour
     {
         if (Advertisement.IsReady())
         {
-            
+            Advertisement.Show("video");
         }
         SceneManager.LoadScene("Game");
     }
