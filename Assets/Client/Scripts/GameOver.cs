@@ -16,6 +16,15 @@ public class GameOver : MonoBehaviour
         Advertisement.Initialize("5654184", false);
         StartCoroutine(CheckAdInitialized());
     }
+    
+    IEnumerator CheckAdInitialized()
+    {
+        while (!Advertisement.isInitialized)
+        {
+            yield return null;
+        }
+        adInitialized = true;
+    }
 
     public void LoadMenu()
     {
