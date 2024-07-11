@@ -13,10 +13,8 @@ public class GameOver : MonoBehaviour
     
     public void Start()
     {
-        if (Advertisement.isSupported)
-        {
-            Advertisement.Initialize("5654184", false);
-        }
+        Advertisement.Initialize("5654184", false);
+        StartCoroutine(CheckAdInitialized());
     }
 
     public void LoadMenu()
