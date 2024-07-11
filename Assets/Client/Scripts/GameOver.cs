@@ -33,11 +33,10 @@ public class GameOver : MonoBehaviour
     
     public void LoadGame()
     {
-        if (Advertisement.IsReady())
+        if (adInitialized && Advertisement.IsReady())
         {
             Advertisement.Show("video");
         }
-        
         SceneManager.LoadScene("Game");
     }
 }
