@@ -9,6 +9,8 @@ using UnityEngine.Advertisements;
 
 public class GameOver : MonoBehaviour
 {
+    private bool adInitialized = false;
+    
     public void Start()
     {
         if (Advertisement.isSupported)
