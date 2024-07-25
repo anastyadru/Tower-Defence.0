@@ -47,6 +47,11 @@ public class Enemy : MonoBehaviour
         }
     }
     
+    private void UpdateHealthText()
+    {
+        _healthText.text = _health.ToString();
+    }
+    
     private IEnumerator DestroyEnemy()
     {
         yield return new WaitForSeconds(0.1f);
