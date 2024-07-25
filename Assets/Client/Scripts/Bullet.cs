@@ -24,29 +24,44 @@ public class Bullet : MonoBehaviour, IPoolable
 
     private void Update()
     {
-        if (_target == null)
+        if (_target != null)
         {
-            OnHit();
-            return;
-        }
+            Vector3 direction = _target.position - transform.position;
+            float distance = _speed * Time.deltaTime;
 
-        Vector3 direction = (_target.position - transform.position).normalized;
-        float distance = _speed * Time.deltaTime;
+            if (direction.magnitude <= distance)
+            {
+                Enemy enemy = _target.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(_damage);
+                }
+                OnHit();
+            }
 
-        if ((transform.position - _target.position).magnitude <= distance)
-        {
-            _target.GetComponent<Enemy>()?.TakeDamage(_damage);
-            OnHit();
+            transform.Translate(direction.normalized * distance, Space.World);
         }
         else
         {
-            transform.Translate(direction * distance, Space.World);
+            OnHit();
         }
     }
 
     public void OnHit()
     {
-        _bulletPool?.Release(this);
+        if (_bulletPool != null)
+        {
+            OnRelease();
+            _bulletPool.Release(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnRelease()
+    {
         gameObject.SetActive(false);
     }
 }
