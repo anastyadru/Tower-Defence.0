@@ -1,21 +1,27 @@
-// Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.
+// Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.using System;
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
     public AudioSource audio_;
     
+    private const float defaultVolume = 1f;
+    
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("volume")) audio_.volume = 1;
+        if (!PlayerPrefs.HasKey("volume"))
+        {
+            audio_.volume = defaultVolume;
+        }
     }
 
     private void Update()
     {
-        audio_.volume = PlayerPrefs.GetFloat("volume");
+        float volume = PlayerPrefs.GetFloat("volume");
+        if (audio_.volume != volume)
+        {
+            audio_.volume = volume;
+        }
     }
 }
