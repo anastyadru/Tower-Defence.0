@@ -1,7 +1,5 @@
 // Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -9,16 +7,14 @@ public class Bullet : MonoBehaviour, IPoolable
 {
     private ObjectPool _bulletPool;
     [SerializeField] private int _damage = 1;
-    [SerializeField] private float _speed = 50;
+    [SerializeField] private float _speed = 50f;
     
     private Transform _target;
-    private IPlayer _player;
-    
+
     [Inject]
-    public void Construct(ObjectPool bulletPool, IPlayer player)
+    public void Construct(ObjectPool bulletPool)
     {
         _bulletPool = bulletPool;
-        _player = player;
     }
 
     public void Find(Transform target)
