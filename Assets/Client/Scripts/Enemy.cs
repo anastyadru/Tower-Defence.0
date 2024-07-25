@@ -1,7 +1,6 @@
 // Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
@@ -13,40 +12,39 @@ public class Enemy : MonoBehaviour
     
     private int _health;
 
-    public NavMeshAgent agent;
-    public GameObject EndCube;
+    private NavMeshAgent _agent;
+    private Transform _endCube;
     
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        EndCube = GameObject.FindGameObjectWithTag("EndCube");
+        _agent = GetComponent<NavMeshAgent>();
+        _endCube = GameObject.FindGameObjectWithTag("EndCube").transform;
         
         SetHealthByWave();
-        _healthText.text = _health.ToString();
+        UpdateHealthText();
     }
     
     private void SetHealthByWave()
     {
-        int currentWave = GameM.instance.GetCurrentWave();
-        _health = currentWave;
+        _health = GameM.instance.GetCurrentWave();
     }
 
     private void Update()
     {
-        agent.SetDestination(EndCube.transform.position);
+        _agent.SetDestination(_endCube.position);
     }
 
     public void TakeDamage(int damage)
     {
         _health -= damage;
+        UpdateHealthText();
+        
         if (_health <= 0)
         {
             GameM.instance._gold += _killReward;
             GameM.instance.UpdateGold();
             StartCoroutine(DestroyEnemy());
         }
-        
-        _healthText.text = _health.ToString();
     }
     
     private IEnumerator DestroyEnemy()
