@@ -30,14 +30,19 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        pauseGameMenu.SetActive(true);
-        Time.timeScale = 0f;
-        PauseGame = true;
+        SetPauseState(true);
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenu");
+    }
+    
+    private void SetPauseState(bool pause)
+    {
+        pauseGameMenu.SetActive(pause);
+        Time.timeScale = pause ? 0f : 1f;
+        isPaused = pause;
     }
 }
