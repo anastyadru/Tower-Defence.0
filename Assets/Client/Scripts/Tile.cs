@@ -8,23 +8,25 @@ public class Tile : MonoBehaviour
     [SerializeField] private GameObject _playerPreviewRed;
     [SerializeField] private GameObject _player;
 
-    private GameObject _crPlayerPreview;
-    private bool _build;
-    private bool _spawned;
-    private bool _used;
+    private GameObject _currentPlayerPreview;
+    private bool _isBuilding;
+    private bool _isSpawned;
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            _build = !_build;
+            ToggleBuildMode();
+        }
+    }
+    
+    private void ToggleBuildMode()
+    {
+        _isBuilding = !_isBuilding;
 
-            if (_crPlayerPreview != null)
-            {
-                Destroy(_crPlayerPreview);
-            }
-
-            _used = false;
+        if (_currentPlayerPreview != null)
+        {
+            Destroy(_currentPlayerPreview);
         }
     }
 
