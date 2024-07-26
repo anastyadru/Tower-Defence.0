@@ -57,35 +57,26 @@ public class Tile : MonoBehaviour
         ClearPlayerPreview();
     }
 
-    private void OnMouseExit()
+    private void UpdatePlayerPreview()
     {
-        if(_crPlayerPreview != null)
+        if (_isBuilding && !_isSpawned)
         {
-            Destroy(_crPlayerPreview);
+            if (_currentPlayerPreview != null)
+            {
+                Destroy(_currentPlayerPreview);
+            }
+
+            GameObject previewPrefab = GameM.instance._gold >= GameM.instance._playerCost ? _playerPreview : _playerPreviewRed;
+            _currentPlayerPreview = Instantiate(previewPrefab, transform.position, Quaternion.identity);
         }
-        
-        _used = false;
     }
 
-    private void OnMouseOver()
+    private void ClearPlayerPreview()
     {
-        if (_crPlayerPreview == null && _build && !_spawned)
+        if (_currentPlayerPreview != null)
         {
-            if (GameM.instance._gold >= GameM.instance._playerCost)
-            {
-                _crPlayerPreview = Instantiate(_playerPreview, transform.position, Quaternion.identity);
-            }
-            else
-            {
-                _crPlayerPreview = Instantiate(_playerPreviewRed, transform.position, Quaternion.identity);
-            }
-        }
-
-        if (_crPlayerPreview != null && _build && !_spawned && !_used && GameM.instance._gold >= GameM.instance._playerCost)
-        {
-            _used = true;
-            Destroy(_crPlayerPreview);
-            _crPlayerPreview = Instantiate(_playerPreview, transform.position, Quaternion.identity);
+            Destroy(_currentPlayerPreview);
+            _currentPlayerPreview = null; // Обнуляем ссылку для избежания утечек памяти
         }
     }
 }
