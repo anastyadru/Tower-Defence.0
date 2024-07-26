@@ -8,6 +8,9 @@ public class PlayerBtn : MonoBehaviour
 
     public GameObject PlayerObject
     {
-        playerObject;
+        get
+        {
+            return playerObject;
+        }
     }
 }
