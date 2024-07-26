@@ -1,25 +1,22 @@
 // Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool PauseGame;
     public GameObject pauseGameMenu;
+    private bool isPaused;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (PauseGame)
+            if (isPaused)
             {
                 Resume();
             }
-            else if (!pauseGameMenu.activeSelf)
+            else
             {
                 Pause();
             }
@@ -28,9 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseGameMenu.SetActive(false);
-        Time.timeScale = 1f;
-        PauseGame = false;
+        SetPauseState(false);
     }
 
     public void Pause()
