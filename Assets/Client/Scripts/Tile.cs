@@ -14,7 +14,7 @@ public class Tile : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(0))
         {
             ToggleBuildMode();
         }
@@ -76,7 +76,7 @@ public class Tile : MonoBehaviour
         if (_currentPlayerPreview != null)
         {
             Destroy(_currentPlayerPreview);
-            _currentPlayerPreview = null; // Обнуляем ссылку для избежания утечек памяти
+            _currentPlayerPreview = null;
         }
     }
 }
