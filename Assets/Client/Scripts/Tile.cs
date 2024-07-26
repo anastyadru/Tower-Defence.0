@@ -29,18 +29,32 @@ public class Tile : MonoBehaviour
             Destroy(_currentPlayerPreview);
         }
     }
-
+    
     private void OnMouseDown()
     {
-        if(_build && !_spawned && GameM.instance._gold >= GameM.instance._playerCost)
+        if (_isBuilding && !_isSpawned && GameM.instance._gold >= GameM.instance._playerCost)
         {
-            _spawned = true;
-            _used = false;
-            GameM.instance._gold -= GameM.instance._playerCost;
-            GameM.instance.UpdateGold();
-            Instantiate(_player, transform.position, Quaternion.identity);
-            Destroy(_crPlayerPreview);
+            SpawnPlayer();
         }
+    }
+    
+    private void OnMouseExit()
+    {
+        ClearPlayerPreview();
+    }
+
+    private void OnMouseOver()
+    {
+        UpdatePlayerPreview();
+    }
+
+    private void SpawnPlayer()
+    {
+        _isSpawned = true;
+        GameM.instance._gold -= GameM.instance._playerCost;
+        GameM.instance.UpdateGold();
+        Instantiate(_player, transform.position, Quaternion.identity);
+        ClearPlayerPreview();
     }
 
     private void OnMouseExit()
