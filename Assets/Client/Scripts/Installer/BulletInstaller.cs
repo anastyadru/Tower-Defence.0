@@ -8,6 +8,7 @@ public class BulletInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Container.Bind<ObjectPool>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<IPoolable>().To<Bullet>().AsSingle();
+        Container.Bind<Bullet>().AsTransient(); // Используем AsTransient для создания новых экземпляров
+        Container.Bind<IPoolable>().To<Bullet>().AsTransient(); // Привязываем IPoolable к Bullet
     }
 }
