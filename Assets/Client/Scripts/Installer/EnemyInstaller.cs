@@ -7,7 +7,7 @@ public class EnemyInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        Container.Bind<Enemy>().FromComponentInHierarchy().AsSingle();
+        var enemy = Container.Bind<Enemy>().FromComponentInHierarchy().AsSingle();
         Container.Bind<UnityEngine.AI.NavMeshAgent>().FromComponentInHierarchy().AsSingle();
     }
 }
