@@ -10,10 +10,14 @@ public class GameInstaller : MonoInstaller
         Container.Bind<ObjectPool>().FromComponentInHierarchy().AsSingle();
         Container.Bind<GameM>().FromComponentInHierarchy().AsSingle();
         
-        Container.Bind<IPoolable>().To<Bullet>().AsTransient();
         Container.Bind<Player>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<PlayerManager>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<Player2>().FromComponentInHierarchy().AsSingle();
         Container.Bind<IPlayer>().To<Player>().AsSingle();
+        Container.Bind<PlayerManager>().FromComponentInHierarchy().AsSingle();
+        
+        Container.Bind<IPoolable>().To<Bullet>().AsTransient();
+        
+        
+        Container.Bind<Player2>().FromComponentInHierarchy().AsSingle();
+        
     }
 }
