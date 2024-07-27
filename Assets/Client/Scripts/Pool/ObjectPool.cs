@@ -21,7 +21,6 @@ public class ObjectPool : MonoBehaviour
                 obj.gameObject.SetActive(false);
                 objectPool.Enqueue(obj);
             }
-
             poolDictionary[type] = objectPool;
         }
     }
