@@ -7,7 +7,7 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     public Bullet bulletPrefab;
-    private readonly Dictionary<Type, Queue<IPoolable>> poolDictionary = new();
+    private readonly Dictionary<Type, Queue<IPoolable>> poolDictionary = new Dictionary<Type, Queue<IPoolable>>();
 
     public void PrePool<T>(T prefab, int count) where T : MonoBehaviour, IPoolable
     {
