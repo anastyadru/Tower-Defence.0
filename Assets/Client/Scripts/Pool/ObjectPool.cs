@@ -28,13 +28,10 @@ public class ObjectPool : MonoBehaviour
 
     public T Get<T>() where T : MonoBehaviour, IPoolable
     {
-        Type type = typeof(T);
-        if (poolDictionary.ContainsKey(type) && poolDictionary[type].Count > 0)
+        if (poolDictionary.TryGetValue(typeof(T), out var objectPool) && objectPool.Count > 0)
         {
-            IPoolable obj = poolDictionary[type].Dequeue();
-            return (T)obj;
+            return (T)objectPool.Dequeue();
         }
-    
         return null;
     }
 
