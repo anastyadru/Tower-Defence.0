@@ -8658,7 +8658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1f70504aacd744aa3bc5b2160d21ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOn: 0
 --- !u!1 &1558914586
 GameObject:
   m_ObjectHideFlags: 0
@@ -8785,7 +8784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d098571cae742db4c99bb7cee9aa87af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseGame: 0
   pauseGameMenu: {fileID: 1111877824}
 --- !u!1 &1567163619
 GameObject:
@@ -9177,7 +9175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1604015574}
-  oldVolume: 0
 --- !u!1 &1634114570
 GameObject:
   m_ObjectHideFlags: 0
@@ -11658,6 +11655,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2130317099}
     m_Modifications:
+    - target: {fileID: 4078800460506093067, guid: fb409769f7a61b745b232150bab49a7e, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 5011313312658910019, guid: 63d4fce8e667feb4e97ff4d720d2d88b, type: 3}
     - target: {fileID: 4078800460506093067, guid: fb409769f7a61b745b232150bab49a7e, type: 3}
       propertyPath: _playerPreviewRed
       value: 
