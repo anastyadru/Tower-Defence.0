@@ -1,31 +1,28 @@
 // Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
 public class ObjectPool : MonoBehaviour
 {
     public Bullet bulletPrefab;
-    
-    public Dictionary<Type, Queue<IPoolable>> poolDictionary = new Dictionary<Type, Queue<IPoolable>>();
-    
+    private readonly Dictionary<Type, Queue<IPoolable>> poolDictionary = new();
+
     public void PrePool<T>(T prefab, int count) where T : MonoBehaviour, IPoolable
     {
-        Type type = typeof(T);
+        var type = typeof(T);
         if (!poolDictionary.ContainsKey(type))
         {
-            Queue<IPoolable> objectPool = new Queue<IPoolable>();
+            var objectPool = new Queue<IPoolable>();
             for (int i = 0; i < count; i++)
             {
-                T obj = GameObject.Instantiate(prefab) as T;
+                var obj = Instantiate(prefab);
                 obj.gameObject.SetActive(false);
                 objectPool.Enqueue(obj);
             }
 
-            poolDictionary.Add(type, objectPool);
+            poolDictionary[type] = objectPool;
         }
     }
 
