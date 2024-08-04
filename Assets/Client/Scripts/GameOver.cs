@@ -35,6 +35,11 @@ public class GameOver : MonoBehaviour
         {
             Advertisement.Show("video");
         }
+        else
+        {
+            // Если реклама не готова, просто загружаем сцену игры
+            Debug.Log("Ad not ready, loading game without showing ad.");
+        }
         
         SceneManager.LoadScene("Game");
     }
