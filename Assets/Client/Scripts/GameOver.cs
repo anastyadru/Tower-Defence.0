@@ -31,13 +31,9 @@ public class GameOver : MonoBehaviour
     
     public void LoadGame()
     {
-        if (adInitialized && Advertisement.IsReady("video"))
+        if (adInitialized && Advertisement.IsReady())
         {
             Advertisement.Show("video");
-        }
-        else
-        {
-            Debug.Log("Ad not ready, loading game without showing ad.");
         }
         
         SceneManager.LoadScene("Game");
