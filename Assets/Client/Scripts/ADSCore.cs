@@ -7,6 +7,6 @@ using UnityEngine;
 public class ADSCore : MonoBehaviour
 {
     [SerializeField] private bool _testMode = true;
-    
-    
+
+    private string _gameID = "5671873";
 }
