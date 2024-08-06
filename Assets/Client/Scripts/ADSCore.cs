@@ -9,4 +9,10 @@ public class ADSCore : MonoBehaviour
     private string _gameId = "5671873";
 
     private string _rewardedVideo = "Rewarded Android";
+
+    void Start()
+    {
+        Advertisement.Initialize(_gameId, _testMode);
+        
+    }
 }
