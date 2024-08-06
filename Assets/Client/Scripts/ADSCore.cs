@@ -23,7 +23,7 @@ public class ADSCore : MonoBehaviour
         }
         else
         {
-            
+            Debug.Log("Advertisement is not ready!");
         }
     }
 }
