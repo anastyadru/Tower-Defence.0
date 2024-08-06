@@ -13,6 +13,10 @@ public class ADSCore : MonoBehaviour
     void Start()
     {
         Advertisement.Initialize(_gameId, _testMode);
+    }
+
+    public static void ShowAdsVideo(string placementId)
+    {
         
     }
 }
