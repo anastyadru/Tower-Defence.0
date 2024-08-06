@@ -8,7 +8,7 @@ public class ADSCore : MonoBehaviour
     [SerializeField] private bool _testMode = true;
 
     private string _gameId = "5671873";
-    private string _rewardedVideo = "Rewarded Android";
+    private string _rewardedVideo = "Rewarded_Android";
 
     void Start()
     {
