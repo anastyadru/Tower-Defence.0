@@ -7,23 +7,6 @@ using UnityEngine.Advertisements;
 
 public class GameOver : MonoBehaviour
 {
-    private bool adInitialized;
-    
-    public void Start()
-    {
-        Advertisement.Initialize("5654184", false);
-        StartCoroutine(CheckAdInitialized());
-    }
-    
-    IEnumerator CheckAdInitialized()
-    {
-        while (!Advertisement.isInitialized)
-        {
-            yield return null;
-        }
-        adInitialized = true;
-    }
-
     public void LoadMenu()
     {
         SceneManager.LoadScene("StartMenu");
