@@ -6,5 +6,7 @@ using UnityEngine;
 
 public class ADSCore : MonoBehaviour
 {
+    [SerializeField] private bool _testMode = true;
+    
     
 }
