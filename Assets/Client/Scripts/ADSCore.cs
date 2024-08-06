@@ -19,7 +19,7 @@ public class ADSCore : MonoBehaviour
     {
         if (Advertisement.IsReady())
         {
-            
+            Advertisement.Show(placementId);
         }
         else
         {
