@@ -36,4 +36,9 @@ public class ADSCore : MonoBehaviour
             Debug.Log("Advertisement is not ready!");
         }
     }
+
+    IEnumerator ShowBannerWhenInitialized()
+    {
+        
+    }
 }
