@@ -20,6 +20,8 @@ public class ADSCore : MonoBehaviour
         #region Banner
 
         StartCoroutine(ShowBannerWhenInitialized());
+        Advertisement.Banner.SetPosition(BannerPosition.TOP_CENTER);
+        
         
     }
 
