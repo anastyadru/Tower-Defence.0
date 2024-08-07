@@ -25,7 +25,7 @@ public class ADSCore : MonoBehaviour
         #endregion
     }
 
-    public static void ShowAdsVideo(string placementID)
+    public static void ShowAdsVideo(string placementId)
     {
         if (Advertisement.IsReady(_rewardedVideo))
         {
