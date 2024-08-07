@@ -16,6 +16,11 @@ public class ADSCore : MonoBehaviour
     void Start()
     {
         Advertisement.Initialize(_gameId, _testMode);
+        
+        #region Banner
+
+        StartCoroutine(ShowBannerWhenInitialized());
+        
     }
 
     public void ShowAdsVideo()
