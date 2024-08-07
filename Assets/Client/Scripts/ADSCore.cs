@@ -50,7 +50,10 @@ public class ADSCore : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsReady(string placementId)
     {
-        throw new System.NotImplementedException();
+        if (placementId == _rewardedVideo)
+        {
+            
+        }
     }
     
     public void OnUnityAdsDidError(string message)
