@@ -47,4 +47,11 @@ public class ADSCore : MonoBehaviour, IUnityAdsListener
 
         Advertisement.Banner.Show(_banner);
     }
+
+    public void OnUnityAdsReady(string placementId)
+    {
+        throw new System.NotImplementedException();
+    }
+    
+    
 }
