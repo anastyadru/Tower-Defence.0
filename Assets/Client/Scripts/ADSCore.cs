@@ -69,10 +69,14 @@ public class ADSCore : MonoBehaviour, IUnityAdsListener
     
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        if (showResult == showResult.Finished)
+        if (showResult == ShowResult.Finished)
         {
             Debug.Log("+1");
         }
-        else if 
+        else if (showResult == ShowResult.Skipped)
+        {
+            Debug.Log("Ошибка!");
+        }
+        
     }
 }
