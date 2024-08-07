@@ -40,5 +40,8 @@ public class ADSCore : MonoBehaviour
     IEnumerator ShowBannerWhenInitialized()
     {
         while (!Advertisement.isInitialized)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }
