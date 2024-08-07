@@ -16,6 +16,7 @@ public class ADSCore : MonoBehaviour, IUnityAdsListener
 
     void Start()
     {
+        Advertisement.AddListener(this);
         Advertisement.Initialize(_gameId, _testMode);
         
         #region Banner
