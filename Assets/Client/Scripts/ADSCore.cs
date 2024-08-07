@@ -53,5 +53,8 @@ public class ADSCore : MonoBehaviour, IUnityAdsListener
         throw new System.NotImplementedException();
     }
     
-    
+    public void OnUnityAdsDidError(string message)
+    {
+        
+    }
 }
