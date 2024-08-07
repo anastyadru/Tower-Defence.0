@@ -39,6 +39,6 @@ public class ADSCore : MonoBehaviour
 
     IEnumerator ShowBannerWhenInitialized()
     {
-        
+        while (!Advertisement.isInitialized)
     }
 }
