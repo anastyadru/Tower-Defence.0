@@ -11,6 +11,7 @@ public class ADSCore : MonoBehaviour
     
     private string _video = "Interstitial_Android";
     private string _rewardedVideo = "Rewarded_Android";
+    private string _banner = "Banner_Android";
 
     void Start()
     {
