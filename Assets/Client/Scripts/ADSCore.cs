@@ -27,9 +27,9 @@ public class ADSCore : MonoBehaviour
 
     public static void ShowAdsVideo(string placementId)
     {
-        if (Advertisement.IsReady(_rewardedVideo))
+        if (Advertisement.IsReady())
         {
-            Advertisement.Show(_rewardedVideo);
+            Advertisement.Show(placementId);
         }
         else
         {
