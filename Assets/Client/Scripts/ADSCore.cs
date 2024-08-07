@@ -43,5 +43,7 @@ public class ADSCore : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
         }
+
+        Advertisement.Banner.Show(_banner);
     }
 }
