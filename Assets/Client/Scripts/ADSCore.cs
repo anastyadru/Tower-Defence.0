@@ -22,10 +22,10 @@ public class ADSCore : MonoBehaviour
         StartCoroutine(ShowBannerWhenInitialized());
         Advertisement.Banner.SetPosition(BannerPosition.TOP_CENTER);
         
-        
+        #endregion
     }
 
-    public void ShowAdsVideo()
+    public static void ShowAdsVideo(string placementID)
     {
         if (Advertisement.IsReady(_rewardedVideo))
         {
