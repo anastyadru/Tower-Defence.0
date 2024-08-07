@@ -52,18 +52,18 @@ public class ADSCore : MonoBehaviour, IUnityAdsListener
     {
         if (placementId == _rewardedVideo)
         {
-            
+            // действия, если реклама доступна
         }
     }
     
     public void OnUnityAdsDidError(string message)
     {
-        
+        // ошибка рекламы
     }
     
     public void OnUnityAdsDidStart(string placementId)
     {
-        
+        // только запустили рекламу
     }
     
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
