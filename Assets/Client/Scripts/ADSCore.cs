@@ -62,4 +62,9 @@ public class ADSCore : MonoBehaviour, IUnityAdsListener
     {
         
     }
+    
+    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+    {
+        
+    }
 }
