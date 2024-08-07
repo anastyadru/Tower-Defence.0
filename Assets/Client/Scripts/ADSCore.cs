@@ -81,7 +81,7 @@ public class ADSCore : MonoBehaviour, IUnityAdsListener
         }
         else if (showResult == ShowResult.Failed)
         {
-            // если пользователь посмотрел рекламу
+            // действия при ошибке
         }
     }
 }
