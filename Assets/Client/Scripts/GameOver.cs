@@ -21,7 +21,7 @@ public class GameOver : MonoBehaviour
 
         if (tempPersent < _persentShowAds)
         {
-            
+            AdsCore.ShowAdsVideo("Interstitial Android");
         }
     }
 }
