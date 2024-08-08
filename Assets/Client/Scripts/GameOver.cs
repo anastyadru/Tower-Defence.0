@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    [SerializeField] private float _persentShowAds;
+    
     public void LoadMenu()
     {
         SceneManager.LoadScene("StartMenu");
@@ -14,5 +16,10 @@ public class GameOver : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("Game");
+
+        float temoPersent = Random.Range(0f, 1f);
+        {
+            
+        }
     }
 }
