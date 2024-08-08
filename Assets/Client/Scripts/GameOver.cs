@@ -17,7 +17,9 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
 
-        float temoPersent = Random.Range(0f, 1f);
+        float tempPersent = Random.Range(0f, 1f);
+
+        if (tempPersent < _persentShowAds)
         {
             
         }
