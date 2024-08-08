@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-public class ADSCore : MonoBehaviour, IUnityAdsListener
+public class AdsCore : MonoBehaviour, IUnityAdsListener
 {
     [SerializeField] private bool _testMode = true;
 

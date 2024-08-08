@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RewardedADS : MonoBehaviour
+public class RewardedAds : MonoBehaviour
 {
     
 }
