@@ -18,6 +18,14 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("Game");
         
         StartCoroutine(ShowAdIfReady());
+    }
+
+    private IEnumerator ShowAdIfReady()
+    {
+        while (!Advertisement.isInitialized || !Advertisement.IsReady("Interstitial_Android"))
+        {
+            yield return new WaitForSeconds(0.3f);
+        }
 
         float tempPersent = Random.Range(0f, 1f);
 
@@ -25,10 +33,5 @@ public class GameOver : MonoBehaviour
         {
             AdsCore.ShowAdsVideo("Interstitial_Android");
         }
-    }
-
-    private IEnumerator ShowAdIfReady()
-    {
-        
     }
 }
