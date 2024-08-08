@@ -16,12 +16,19 @@ public class GameOver : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("Game");
+        
+        StartCoroutine(ShowAdIfReady());
 
         float tempPersent = Random.Range(0f, 1f);
 
         if (tempPersent < _persentShowAds)
         {
-            AdsCore.ShowAdsVideo("Interstitial Android");
+            AdsCore.ShowAdsVideo("Interstitial_Android");
         }
+    }
+
+    private IEnumerator ShowAdIfReady()
+    {
+        
     }
 }
