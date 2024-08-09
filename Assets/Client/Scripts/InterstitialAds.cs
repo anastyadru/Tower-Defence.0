@@ -12,16 +12,16 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
     [SerializeField] private Button _adsButton;
     
     private string _gameId = "5671873";
-    private string _rewardedVideo = "Rewarded_Android";
+    private string _interstitialAd = "Interstitial_Android";
 
     void Start()
     {
         _adsButton = GetComponent<Button>();
-        _adsButton.interactable = Advertisement.IsReady(_rewardedVideo);
+        _adsButton.interactable = Advertisement.IsReady(_interstitialAd);
 
         if (_adsButton)
         {
-            _adsButton.onClick.AddListener(ShowRewardedVideo);
+            _adsButton.onClick.AddListener(ShowInterstitialAd);
         }
 
         Advertisement.AddListener(this);
