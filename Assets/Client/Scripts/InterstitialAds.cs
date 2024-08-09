@@ -1,11 +1,12 @@
 // Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.using System;
 
+using System;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class RewardedAds : MonoBehaviour, IUnityAdsListener
+public class InterstitialAds : MonoBehaviour, IUnityAdsListener
 {
     [SerializeField] private bool _testMode = true;
     [SerializeField] private Button _adsButton;
