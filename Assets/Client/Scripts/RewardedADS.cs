@@ -11,7 +11,6 @@ public class RewardedAds : MonoBehaviour, IUnityAdsListener
     [SerializeField] private Button _adsButton;
     
     private string _gameId = "5671873";
-    
     private string _rewardedVideo = "Rewarded_Android";
 
     void Start()
@@ -25,7 +24,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsListener
         }
 
         Advertisement.AddListener(this);
-        Advertisement.Initialize(_gameId, true);
+        Advertisement.Initialize(_gameId, _testMode);
     }
 
     public void ShowRewardedVideo()
