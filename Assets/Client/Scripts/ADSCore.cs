@@ -62,7 +62,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
             }
             else if (showResult == ShowResult.Failed)
             {
-                Debug.LogError("Реклама не была показана");
+                Debug.LogError("Межстраничная реклама не была показана");
             }
         }
     }
