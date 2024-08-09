@@ -35,7 +35,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
     
     public void OnUnityAdsReady(string placementId)
     {
-        if (placementId == _rewardedVideo)
+        if (placementId == _interstitialAd)
         {
             _adsButton.interactable = true;
         }
