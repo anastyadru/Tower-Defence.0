@@ -54,11 +54,11 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
         {
             if (showResult == ShowResult.Finished)
             {
-                Debug.Log("Молодец!");
+                Debug.Log("Межстраничная реклама была показана полностью!");
             }
             else if (showResult == ShowResult.Skipped)
             {
-                Debug.Log("Ошибка!");
+                Debug.Log("Межстраничная реклама была пропущена!");
             }
             else if (showResult == ShowResult.Failed)
             {
