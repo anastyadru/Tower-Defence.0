@@ -28,9 +28,9 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
         Advertisement.Initialize(_gameId, _testMode);
     }
 
-    public void ShowRewardedVideo()
+    public void ShowInterstitialAd()
     {
-        Advertisement.Show(_rewardedVideo);
+        Advertisement.Show(_interstitialAd);
     }
     
     public void OnUnityAdsReady(string placementId)
