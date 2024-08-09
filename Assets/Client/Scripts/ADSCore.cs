@@ -50,17 +50,20 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
     
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        if (placementId == _interstitialAd)
+        if (placementId == _interstitialAd) // Проверка для межстраничной рекламы
         {
-            Debug.Log("Молодец!");
-        }
-        else if (showResult == ShowResult.Skipped)
-        {
-            Debug.Log("Ошибка!");
-        }
-        else if (showResult == ShowResult.Failed)
-        {
-            Debug.LogError("Реклама не была показана");
+            if (showResult == ShowResult.Finished)
+            {
+                Debug.Log("Молодец!");
+            }
+            else if (showResult == ShowResult.Skipped)
+            {
+                Debug.Log("Ошибка!");
+            }
+            else if (showResult == ShowResult.Failed)
+            {
+                Debug.LogError("Реклама не была показана");
+            }
         }
     }
 }
