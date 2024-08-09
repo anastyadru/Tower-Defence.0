@@ -21,7 +21,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
 
     public static void ShowAdsVideo(string placementId)
     {
-        if (Advertisement.IsReady())
+        if (Advertisement.IsReady(placementId))
         {
             Advertisement.Show(placementId);
         }
@@ -30,17 +30,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
             Debug.Log("Advertisement is not ready!");
         }
     }
-
-    IEnumerator ShowBannerWhenInitialized()
-    {
-        while (!Advertisement.isInitialized)
-        {
-            yield return new WaitForSeconds(0.5f);
-        }
-
-        Advertisement.Banner.Show(_banner);
-    }
-
+    
     public void OnUnityAdsReady(string placementId)
     {
         if (placementId == _rewardedVideo)
