@@ -41,7 +41,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
     
     public void OnUnityAdsDidError(string message)
     {
-        // ошибка рекламы
+        Debug.LogError($"Advertisement Error: {message}");
     }
     
     public void OnUnityAdsDidStart(string placementId)
@@ -61,7 +61,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
         }
         else if (showResult == ShowResult.Failed)
         {
-            Debug.LogError("Реклама не была показана.");
+            Debug.LogError("Реклама не была показана");
         }
     }
 }
