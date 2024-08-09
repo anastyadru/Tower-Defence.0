@@ -7,7 +7,7 @@ using UnityEngine.Advertisements;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] private float _persentShowAds;
+    [SerializeField] private float _percentShowAds;
     
     public void LoadMenu()
     {
@@ -28,9 +28,9 @@ public class GameOver : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
 
-        float tempPersent = Random.Range(0f, 1f);
+        float tempPercent = Random.Range(0f, 1f);
 
-        if (tempPersent < _persentShowAds)
+        if (tempPercent < _percentShowAds)
         {
             AdsCore.ShowAdsVideo("Interstitial_Android");
         }
