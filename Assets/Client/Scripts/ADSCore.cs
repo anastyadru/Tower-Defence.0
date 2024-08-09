@@ -10,8 +10,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
 
     private string _gameId = "5671873";
     
-    private string _video = "Interstitial_Android";
-    private string _rewardedVideo = "Rewarded_Android";
+    private string _interstitialAd = "Interstitial_Android";
     
     void Start()
     {
@@ -33,7 +32,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
     
     public void OnUnityAdsReady(string placementId)
     {
-        if (placementId == _rewardedVideo)
+        if (placementId == _interstitialAd)
         {
             // действия, если реклама доступна
         }
@@ -51,7 +50,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
     
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        if (showResult == ShowResult.Finished)
+        if (placementId == _interstitialAd)
         {
             Debug.Log("Молодец!");
         }
