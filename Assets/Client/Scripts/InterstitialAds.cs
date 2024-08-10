@@ -37,9 +37,9 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        if (placementId == _interstitialAd)
+        if (placementId == _interstitialAd && showResult == ShowResult.Finished)
         {
-            Debug.Log(showResult == ShowResult.Finished ? "Реклама была показана полностью!" : "Реклама была сброшена");
+            Debug.Log("Реклама была показана полностью!");
         }
     }
 }
