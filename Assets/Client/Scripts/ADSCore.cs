@@ -1,6 +1,5 @@
 // Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.using System;
 
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -11,7 +10,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
     private string _gameId = "5671873";
     private string _interstitialAd = "Interstitial_Android";
     
-    void Start()
+    public void Start()
     {
         Advertisement.AddListener(this);
         Advertisement.Initialize(_gameId, _testMode);
