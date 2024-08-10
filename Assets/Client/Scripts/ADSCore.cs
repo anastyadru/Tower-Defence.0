@@ -47,7 +47,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
     {
         if (placementId == _interstitialAd && showResult == ShowResult.Finished)
         {
-            Debug.Log("Межстраничная реклама была показана полностью!");
+            Debug.Log("Реклама была показана полностью!");
         }
     }
 }

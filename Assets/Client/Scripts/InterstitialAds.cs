@@ -39,7 +39,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
     {
         if (placementId == _interstitialAd)
         {
-            Debug.Log(showResult == ShowResult.Finished ? "Межстраничная реклама была показана полностью!");
+            Debug.Log(showResult == ShowResult.Finished ? "Реклама была показана полностью!" : "Реклама была сброшена");
         }
     }
 }
