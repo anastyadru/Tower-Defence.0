@@ -379,7 +379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _testMode: 1
-  _adsButton: {fileID: 0}
 --- !u!1 &611787011
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32b446f6abb5b46a3ea706057e4ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _persentShowAds: 0.3
+  _percentShowAds: 0.3
 --- !u!1 &796772752
 GameObject:
   m_ObjectHideFlags: 0
