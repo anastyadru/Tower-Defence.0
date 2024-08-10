@@ -32,7 +32,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidError(string message)
     {
-        
+        Debug.LogError($"Advertisement Error: {message}");
     }
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
