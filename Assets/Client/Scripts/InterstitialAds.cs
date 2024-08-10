@@ -14,7 +14,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
     
     private Button _adsButton;
 
-    void Start()
+    public void Start()
     {
         _adsButton = GetComponent<Button>();
         Advertisement.AddListener(this);
