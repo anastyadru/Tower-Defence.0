@@ -29,22 +29,12 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
             Advertisement.Show(_interstitialAd);
         }
     }
-    
-    public void OnUnityAdsReady(string placementId)
-    {
-        
-    }
-    
+
     public void OnUnityAdsDidError(string message)
     {
         
     }
-    
-    public void OnUnityAdsDidStart(string placementId)
-    {
-        
-    }
-    
+
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
         
