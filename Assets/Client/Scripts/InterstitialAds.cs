@@ -52,6 +52,9 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
     
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        
+        if (placementId == _interstitialAd && showResult == ShowResult.Finished)
+        {
+            Debug.Log("Реклама была показана полностью!");
+        }
     }
 }
