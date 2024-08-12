@@ -1,5 +1,6 @@
 // Copyright (c) 2012-2024 FuryLion Group. All Rights Reserved.using System;
 
+using System;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
@@ -27,6 +28,10 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsListener
         if (Advertisement.IsReady(_interstitialAd))
         {
             Advertisement.Show(_interstitialAd);
+        }
+        else
+        {
+            Debug.Log("Advertisement is not ready!");
         }
     }
     
