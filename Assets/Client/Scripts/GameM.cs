@@ -50,7 +50,7 @@ public class GameM : MonoBehaviour
       _endGame = true;
       Debug.Log("Victory!");
       Time.timeScale = 0;
-      EndGame();
+      EndGameWinning();
     }
 
     if(_waveIndex >= _wavesCount)
@@ -116,7 +116,7 @@ public class GameM : MonoBehaviour
     if (_waveIndex >= _wavesCount)
     {
       Debug.Log("All waves completed!");
-      EndGame();
+      EndGameWinning();
     }
   }
   
