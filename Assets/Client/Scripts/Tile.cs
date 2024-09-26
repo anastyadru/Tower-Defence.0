@@ -57,7 +57,7 @@ public class Tile : MonoBehaviour
         ClearPlayerPreview();
     }
 
-    private void UpdatePlayerPreview()
+    private void PlayerPreview()
     {
         if (_isBuilding && !_isSpawned)
         {
