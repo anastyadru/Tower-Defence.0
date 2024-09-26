@@ -48,7 +48,7 @@ public class Tile : MonoBehaviour
         UpdatePlayerPreview();
     }
 
-    private void SpawnPlayer()
+    private void CreatePlayer()
     {
         _isSpawned = true;
         GameM.instance._gold -= GameM.instance._playerCost;
