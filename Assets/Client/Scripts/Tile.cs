@@ -34,7 +34,7 @@ public class Tile : MonoBehaviour
     {
         if (_isBuilding && !_isSpawned && GameM.instance._gold >= GameM.instance._playerCost)
         {
-            SpawnPlayer();
+            CreatePlayer();
         }
     }
     
