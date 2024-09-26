@@ -45,7 +45,7 @@ public class Tile : MonoBehaviour
 
     private void OnMouseOver()
     {
-        UpdatePlayerPreview();
+        PlayerPreview();
     }
 
     private void CreatePlayer()
