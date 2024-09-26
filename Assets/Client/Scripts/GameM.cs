@@ -120,7 +120,7 @@ public class GameM : MonoBehaviour
     }
   }
   
-  public void EndGame()
+  public void EndGameWinning()
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
   }
